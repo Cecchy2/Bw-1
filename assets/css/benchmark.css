@@ -36,9 +36,9 @@ main,footer{
 }
 .button button{
   width: 25em;
-  height: 6em;
+  height: 5em;
   background-color: transparent;
-  border-radius: 30px; 
+  border-radius: 50px 50px 50px 50px; 
   box-shadow:  -1px -5px 3px -3px #FFFFFF;
   cursor: pointer;
   color: white;
