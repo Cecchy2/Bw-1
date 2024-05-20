@@ -12,8 +12,9 @@ h1 {
     font-weight: bold;
     text-align: center;
 }
-h2{
+p {
     text-align: center;
+    margin-bottom: 2em;
 }
 
 #epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
@@ -21,38 +22,43 @@ h2{
     margin-left: 3em;
     margin-top: 3em;
 }
+
 #form{
     display: block;
     text-align: center;
 
 }
+
 .star{
     text-align: center;
+    margin-bottom: 4em;
 }
+
 #comment{
     text-align: center;
     
 }
+
 #input{
     width: 60%;
     height: 50px;
     background-color: transparent;
-    border: 0px;
-    border-bottom: solid 1px rgb(194, 21, 141);
-    font-size: 1.1em;
-    padding-left: 30px;
-   
+    border: 0;
+    border-bottom: 2px solid #9a1884;
+    color: antiquewhite;
+    padding-left: 1em;
+    box-sizing: border-box;
 }
+
 #button{
     width: 200px;
     height: 50px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-top: 3em;
     background-color: rgb(0, 255, 255);
     border: none;
     box-shadow: 0px 0px 89px 0px rgb(0, 255, 255);
     font-size: 1.2em;
-
 }
