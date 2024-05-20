@@ -3,7 +3,7 @@ head{
 }
 #timer{
     display: inline;
-    margin-left: 90em;
+    margin-left: 80em;
     
 }
 img{
@@ -45,8 +45,8 @@ main,footer{
     
 }
 button:hover{
-    background-color: white;
-    color: black;
+    background-color:  #c90090;
+    border-color: #c61895;
 
 }
 
