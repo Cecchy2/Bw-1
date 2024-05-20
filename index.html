@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/css/index.css" />
-    <title>Welcome Page</title>
-  </head>
 
-  <body>
-    <header>
-      <img
-        id="epicodeLogo"
-        src="./assets/imgs/epicode_logo.png"
-        alt="logo epicode"
-        class="epicodeLogo"
-      />
-    </header>
-    <main>
-      <section id="titolo">
-        <h1>Welcome to <span>your exam</span></h1>
-        
-      </section>      
-      <h2>Instructions</h2>
-      <p>
-        We don't expect most engineers to know the answers to all of these questions, so
-        don't worry if you're unsure of a few of them.
-      </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/index.css" />
+  <title>Welcome Page</title>
+</head>
 
-      <ul>
-        <li>Each question is timed and can only be answered once.</li>
-        <li>
-          Changing broswer tab or opening other windows will invalidate the question.
-        </li>
-        <li>This exam will take approx. 0-5 minutes.</li>
-      </ul>
-    </main>
-    <form id="form">
-      <input type="checkbox" required id="checkbox" />
-      <label for="checkbox">I promise to answer myself without help from anyone</label>
-      <button>PROCEED</button>
-    </form id="form">
-  </body>
+
+<body>
+  <header>
+    <img id="epicodeLogo" src="./assets/imgs/epicode_logo.png" alt="logo epicode"
+      class="epicodeLogo" />
+  </header>
+  <main>
+    <section id="titolo">
+      <h1>Welcome to <span>your exam</span></h1>
+
+    </section>
+    <h2>Instructions</h2>
+    <p>
+      We don't expect most engineers to know the answers to all of these questions, so
+      don't worry if you're unsure of a few of them.
+    </p>
+
+    <ul>
+      <li>Each question is timed and can only be answered once.</li>
+      <li>
+        Changing broswer tab or opening other windows will invalidate the question.
+      </li>
+      <li>This exam will take approx. 0-5 minutes.</li>
+    </ul>
+  </main>
+  <form id="form">
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox">I promise to answer myself without help from anyone</label>
+    <button><a href="./benchmark.html">PROCEED</button></a>
+  </form id="form">
+</body>
+
 </html>
