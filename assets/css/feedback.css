@@ -10,10 +10,25 @@ h1 {
     font-family: "Outfit", sans-serif;
     font-size: 60px;
     font-weight: bold;
+    text-align: center;
+}
+h2{
+    text-align: center;
 }
 
 #epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
     width: 150px;
-    margin-left: 4em;
+    margin-left: 3em;
     margin-top: 3em;
+}
+#form{
+    display: block;
+    text-align: center;
+
+}
+.star{
+    text-align: center;
+}
+#comment{
+    text-align: center;
 }
