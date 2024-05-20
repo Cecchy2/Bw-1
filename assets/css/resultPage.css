@@ -17,3 +17,18 @@ h1 {
     margin-left: 4em;
     margin-top: 3em;
 }
+#titolo{
+    text-align: center;
+    
+}
+main{
+    text-align: center;
+    
+}
+.blocchi{
+    display: inline-block;
+    margin: 5%
+}
+#torta{
+    
+}
