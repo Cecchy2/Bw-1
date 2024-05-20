@@ -10,43 +10,31 @@
 
 <body>
   <header>
-    <img id="epicodeLogo" src="./assets/imgs/epicode_logo.png" alt="logo epicode" class="epicodeLogo" />
+    <img id="epicodeLogo" src="./assets/imgs/epicode_logo.png" alt="logo epicode"
+      class="epicodeLogo" />
   </header>
   <section id="titolo">
-    <nav id="dimensionefont">
-      <h1>Welcome to</h1>
-      <p>
-      <h1><strong>your exam</strong></h1>
-      </p>
-    </nav>
-    </section>
-  
+    <h1>Welcome to <span>your exam</span></h1>
+  </section>
   <main>
     <section id="istruzioni">
-      <article>
-        <div>
-          <h2>Instructions</h2>
-          <p>We don't expect most engineers to know the answers to all of these questions, so don't
-            worry if you're unsure of a few of them.</p>
-        </div>
-      </article>
-    </section>
-    <section>
-      <article class="lista">
-        <div>
-          <ul>
-            <li>Each question is timed and can only be answered once.</li>
-            <li>Changing broswer tab or opening other windows will invalidate the question.</li>
-            <li>This exam will take approx. 0-5 minutes.</li>
-          </ul>
-        </div>
-      </article>
-    </section>
-    <footer>
       <div>
-        <p><input type="checkbox" /> I promise to answer myself without help from anyone <input
-            type="submit" value="PROCEED" /></p>
+        <h2>Instructions</h2>
+        <p>We don't expect most engineers to know the answers to all of these questions, so don't
+          worry if you're unsure of a few of them.</p>
       </div>
+      <ul>
+        <li>Each question is timed and can only be answered once.</li>
+        <li>Changing broswer tab or opening other windows will invalidate the question.</li>
+        <li>This exam will take approx. 0-5 minutes.</li>
+      </ul>
+      </div>
+    </section>
+    <div>
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox">I promise to answer myself without help from anyone</label>
+      <button>Proceed</button>
+    </div>
     </footer>
   </main>
 </body>
