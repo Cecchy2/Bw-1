@@ -67,3 +67,8 @@ a{
     text-decoration: none;
     color: white;
 }
+circle{
+    fill: none;
+    stroke: magenta;
+    stroke-width: 20;
+}
