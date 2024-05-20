@@ -4,6 +4,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   color: white;
+  margin-left: 10%;
 
 }
 
@@ -12,39 +13,60 @@ body {
   margin-left: 4em;
   margin-top: 3em;
 }
+#titolo{
+  width:400px ;
+  margin-top: 9%;
+  margin-bottom: 2%;
+}
 
 h1 {
   font-family: "Outfit", sans-serif;
-  font-size: 60px;
-  font-weight: bold;
+  font-size: 4.5em;
+  font-weight: 400;
+  margin: 0;
+  
+}
+main p{
+  width: 480px;
+  margin-bottom: 4%;
+  margin-top: 5px;
+}
+li{
+  padding-top: 1%;
+}
+span{
+  font-weight: 700;
+  
 }
 
-#titolo{
-  text-align: center;
+h2{
+  color: rgb(194, 21, 141);
+  margin-bottom: 0;
+  
+}
+form{
+  margin-top: 7%;
+  margin-bottom: 300px;
+}
+label{
+  margin-right: 17%;
 }
 
-#istruzioni{
-  text-align: center;
-}
-.lista{
-  text-align: center;
-}
 
-#proceedButton{
+
+
+button{
   background-color: #00FFFF;
   border-color: #00FFFF;
   box-shadow: 2px 0px 16px 0px #00FFFF;
-  height: 40px;
-  width: 120px;
+  height: 60px;
+  width: 200px;
+  border-style: none;
+  font-size: 1.4em;
+  font-weight: 700;
 }
 footer{
   display: inline-block;
   padding-bottom: 5em; 
 }
-footer p{
-  display: inline-block;
-}
-#inputFooter{
-  display: inline-block;
-   padding-left: 20em; 
-}
+

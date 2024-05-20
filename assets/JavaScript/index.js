@@ -1,0 +1,1 @@
+let punteggio = 0;
