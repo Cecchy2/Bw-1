@@ -84,6 +84,9 @@ const questions = [
 const textQuestion = document.getElementById("domanda");
 console.log(questions);
 
+const risposteUtente = [];
+let punteggioUtente = 0;
+
 for (let i = 0; i < questions.length; i++) {
   // cambio il testo della domanda
   textQuestion.innerText = questions[i].question;
@@ -103,7 +106,21 @@ for (let i = 0; i < questions.length; i++) {
     btnRisposta.innerText = element;
     btnRisposta.classList.add("button");
 
+    // aggiungo event listener click ai bottoni
+    btnRisposta.addEventListener("click", (event) => {
+      if (btnRisposta.innerText === questions[i].correct_answer) {
+        console.log("riposta esatta");
+        punteggioUtente += 1; // se la risposta è corretta +1 punto
+      } else {
+        console.log("risposta errata");
+        punteggioUtente += 0; // se la risposta è sbagliata +0 punti
+      }
+    });
+
+    // CONTROLLA IL CONTATORE DEL PUNTEGGIO NON FUNZIONA
+
     sezioneRisposte.appendChild(btnRisposta);
+    console.log("punteggio= ", punteggioUtente);
   });
 
   break;
