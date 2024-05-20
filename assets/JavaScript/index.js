@@ -82,9 +82,29 @@ const questions = [
 ];
 
 const textQuestion = document.getElementById("domanda");
-
-console.log(textQuestion.innerText);
+console.log(questions);
 
 for (let i = 0; i < questions.length; i++) {
+  // cambio il testo della domanda
   textQuestion.innerText = questions[i].question;
+
+  // creo un array con tutte le risposte di una domanda
+  const arrayRisposte = [questions[i].correct_answer, ...questions[i].incorrect_answers];
+
+  // creo un riferimento alla sezione dove andranno le risposte
+  const sezioneRisposte = document.getElementById("risposte");
+
+  // pulisco la sezione risposte prima di creare i bottoni
+  sezioneRisposte.innerHTML = "";
+
+  // itero gli elementi dell'array con le risposte per generare tanti bottoni quante sono le risposte
+  arrayRisposte.forEach((element) => {
+    const btnRisposta = document.createElement("button");
+    btnRisposta.innerText = element;
+    btnRisposta.classList.add("button");
+
+    sezioneRisposte.appendChild(btnRisposta);
+  });
+
+  break;
 }

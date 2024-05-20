@@ -33,7 +33,7 @@ h1 {
 main,footer{
     text-align: center;
 }
-.button button{
+.button {
   width: 25em;
   height: 6em;
   background-color: transparent;
@@ -42,21 +42,15 @@ main,footer{
   cursor: pointer;
   color: white;
   transition: all 0.3s;
+  margin: 3em;
     
 }
-button:hover{
+
+.button:hover {
     background-color:  #c90090;
     border-color: #c61895;
-
 }
 
-.button{
-    display: inline-block;
-    padding: 10px 20px;
-   
-   
-    
-}
 #questionCounter h1{
     font-size: 20px;
     padding-top: 5em;
@@ -64,4 +58,10 @@ button:hover{
 }
 #questionCounter span{
     color: #D20094;
+}
+
+main {
+    width: 50%;
+    margin: auto;
+    margin-top: 10em;
 }
