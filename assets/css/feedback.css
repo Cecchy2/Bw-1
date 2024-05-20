@@ -31,4 +31,11 @@ h2{
 }
 #comment{
     text-align: center;
+    
+}
+#input{
+    width: 60%;
+    height: 50px;
+    background-color: transparent;
+   
 }
