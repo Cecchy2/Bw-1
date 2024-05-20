@@ -68,7 +68,7 @@ a{
     text-decoration: none;
     color: white;
 }
-.circle{
+circle{
     fill: none;
     stroke: aqua;
     stroke-width: 15;
@@ -78,7 +78,6 @@ a{
     animation: rellenar;
     
 }
-secondoCerchio{
-    stroke: magenta;
-    stroke-width: 20;
+.secondocerchio{
+    color: magenta;
 }
