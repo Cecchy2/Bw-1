@@ -62,3 +62,8 @@ span{
     font-size: 3em;
     margin: 0;   
 }
+circle{
+    fill: none;
+    stroke: magenta;
+    stroke-width: 20;
+}
