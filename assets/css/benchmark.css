@@ -1,9 +1,13 @@
-#logoEpicode{
+head{
     display: inline-block;
 }
 #timer{
-    display: inline-block;
-    padding-left: 90em;
+    display: inline;
+    margin-left: 90em;
+    
+}
+img{
+    display: inline;
 }
 
 
@@ -29,13 +33,21 @@ h1 {
 main,footer{
     text-align: center;
 }
-.button input{
+.button button{
   width: 25em;
   height: 6em;
   background-color: transparent;
   border-radius: 30px; 
   box-shadow:  -1px -5px 3px -3px #FFFFFF;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
     
+}
+button:hover{
+    background-color: white;
+    color: black;
+
 }
 
 .button{
