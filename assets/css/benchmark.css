@@ -1,6 +1,11 @@
 head{
     display: inline-block;
 }
+#epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
+    width: 150px;
+    margin-left: 4em;
+    margin-top: 3em;
+}  
 #timer{
     display: inline;
     margin-left: 80em;
@@ -9,27 +14,20 @@ head{
 img{
     display: inline;
 }
-
-
- body {
+body {
     background-image: url(../imgs/bg.jpg);
     background-size: cover;
     font-family: "Inter", sans-serif;
     font-size: 16px;
     color: white;
 }
-
 h1 {
     font-family: "Outfit", sans-serif;
     font-size: 60px;
     font-weight: bold;
 }
 
-#epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
-    width: 150px;
-    margin-left: 4em;
-    margin-top: 3em;
-}  
+
 main,footer{
     text-align: center;
 }
