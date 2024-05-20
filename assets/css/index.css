@@ -8,6 +8,10 @@ body {
   margin-right: 20%;
 }
 
+#logo {
+  margin-top: 5%;
+}
+
 #dimensionefont {
-  font-size: 50px;
+  font-size: 40px;
 }
