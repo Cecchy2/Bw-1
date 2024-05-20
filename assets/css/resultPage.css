@@ -63,7 +63,22 @@ span{
     font-size: 3em;
     margin: 0;   
 }
+
 a{
     text-decoration: none;
     color: white;
+}
+.circle{
+    fill: none;
+    stroke: aqua;
+    stroke-width: 15;
+    transform: rotate(-90deg);
+    stroke: dasharray 100 100 ;
+    transform-origin: 50%;
+    animation: rellenar;
+    
+}
+secondoCerchio{
+    stroke: magenta;
+    stroke-width: 20;
 }
