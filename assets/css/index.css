@@ -5,15 +5,14 @@ body {
   font-size: 16px;
   color: white;
   margin-left: 10%;
-
 }
 
 #epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
-  width: 150px;
-  
+  width: 150px;  
   margin-top: 3em;
 }
-#titolo{
+
+#titolo {
   width:400px ;
   margin-top: 9%;
   margin-bottom: 2%;
@@ -26,36 +25,38 @@ h1 {
   margin: 0;
   
 }
-main p{
+
+main p {
   width: 480px;
   margin-bottom: 4%;
   margin-top: 5px;
 }
-li{
+
+li {
   padding-top: 1%;
 }
-span{
+
+span {
   font-weight: 700;
   
 }
 
-h2{
+h2 {
   color: rgb(194, 21, 141);
   margin-bottom: 0;
   
 }
-form{
+
+form {
   margin-top: 7%;
   margin-bottom: 300px;
 }
-label{
+
+label {
   margin-right: 17%;
 }
 
-
-
-
-button{
+button {
   background-color: #00FFFF;
   border-color: #00FFFF;
   box-shadow: 2px 0px 16px 0px #00FFFF;
@@ -66,3 +67,6 @@ button{
   font-weight: 700;
 }
 
+a {
+  text-decoration: none;
+}
