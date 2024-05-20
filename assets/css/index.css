@@ -18,6 +18,7 @@ h1 {
   font-size: 60px;
   font-weight: bold;
 }
+<<<<<<< Updated upstream
 #titolo{
   text-align: center;
 }
@@ -27,4 +28,23 @@ h1 {
 }
 .lista{
   text-align: center;
+=======
+#proceedButton{
+  background-color: #00FFFF;
+  border-color: #00FFFF;
+  box-shadow: 2px 0px 16px 0px #00FFFF;
+  height: 40px;
+  width: 120px;
+}
+footer{
+  display: inline-block;
+  padding-bottom: 5em; 
+}
+footer p{
+  display: inline-block;
+}
+#inputFooter{
+  display: inline-block;
+   padding-left: 20em; 
+>>>>>>> Stashed changes
 }
