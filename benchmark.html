@@ -1,51 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Benchmark</title>
-    <link rel="stylesheet" href="./assets/css/benchmark.css" />
-  </head>
 
-  <body>
-    <header>
-      <div id="head">
-        <img
-          id="epicodeLogo"
-          src="./assets/imgs/epicode_logo.png"
-          alt="LogoEpicode"
-        />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benchmark</title>
+  <link rel="stylesheet" href="./assets/css/benchmark.css" />
+</head>
 
-        <div id="js-timer">
-          <div id="timer"></div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <section id="quiz">
-        <h1 id="question">
-          How Can I Create a <br />
-          <span>checkbox in HTML?</span>
-        </h1>
-        <div class="button">
-          <button>risposta 1</button>
-        </div>
-        <div class="button">
-          <button>risposta 2</button>
-        </div>
-        <div class="button">
-          <button>risposta 3</button>
-        </div>
-        <div class="button">
-          <button>risposta 4</button>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div id="questionCounter">
-        <h1>QUESTION 1 <span>/10</span></h1>
-      </div>
-    </footer>
-    <script src="./assets/JavaScript/benchmarck.js"></script>
-  </body>
+<body>
+  <header>
+    <div id="head">
+      <img id="epicodeLogo" src="./assets/imgs/epicode_logo.png" alt="LogoEpicode" />
+
+      <div id="timer">16</div>
+    </div>
+  </header>
+  <main>
+    <h1 id="domanda"></h1>
+    <div id="risposte"></div>
+  </main>
+  <footer>
+    <div id="questionCounter">
+      <h1>QUESTION <span id="currentQuestionNumber"></span> <span id="totalQuestions">/10</span>
+      </h1>
+    </div>
+  </footer>
+  <script src="./assets/JavaScript/index.js"></script>
+</body>
+
 </html>

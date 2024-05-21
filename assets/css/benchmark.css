@@ -34,35 +34,32 @@ span{
 main,footer{
     text-align: center;
 }
-.button button{
-  width: 400px;
-  height: 5em;
+.button {
+    width: 400px;
+    height: 5em;
   background-color: transparent;
   border-radius: 50px 50px 50px 50px; 
   box-shadow:  -1px -5px 3px -3px #FFFFFF;
   cursor: pointer;
   color: white;
-  transition: all 0.3s;
-    
+  transition: all 0.3s;   
+  margin: 1em; 
+  
 }
-button:hover{
+.button:hover {
     background-color:  #c90090;
     border-color: #c61895;
-
-}
-
-.button{
-    display: inline-block;
-    padding: 10px 20px;
-   
-   
-    
 }
 #questionCounter h1{
     font-size: 20px;
     padding-top: 5em;
     padding-bottom: 3em;
 }
-#questionCounter span{
+#totalQuestions{
     color: #D20094;
+}
+main {
+    width: 100%;
+    margin: auto;
+    margin-top: 10em;
 }
