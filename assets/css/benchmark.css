@@ -63,3 +63,17 @@ main {
     margin: auto;
     margin-top: 10em;
 }
+
+/* circle timer */
+.traccia{
+    stroke: lightgray;
+    fill: none;
+}
+.progresso{
+    fill: none;
+    stroke: aqua;
+    stroke-width: 10;
+    
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}

@@ -62,7 +62,8 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "What is the code name for the mobile operating system Android 7.0?",
+    question:
+      "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
     incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
   },
@@ -86,7 +87,8 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "Which programming language shares its name with an island in Indonesia?",
+    question:
+      "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
@@ -204,3 +206,35 @@ const getReuslt = () => {
 window.onload = () => {
   mostraDomanda(currentQuestionIndex);
 };
+
+/* circle timer inizio */
+window.onload = function () {
+  let progressoCerchio = document.querySelector(".progresso");
+  let raggio = progressoCerchio.r.baseVal.value;
+  let circonferenza = raggio * 2 * Math.PI;
+  progressoCerchio.style.strokeDasharray = circonferenza;
+  progressoCerchio.style.strokeDashoffset = circonferenza;
+
+  function setProgress(percent) {
+    progressoCerchio.style.strokeDashoffset =
+      circonferenza - (percent / 100) * circonferenza;
+  }
+
+  function startCountdown(duration) {
+    let start = Date.now();
+    let intervallo = setInterval(function () {
+      let durata = Date.now() - start;
+      let percent = (durata / duration) * 100;
+      if (percent >= 100) {
+        percent = 100;
+        clearInterval(intervallo);
+      }
+      setProgress(100 - percent); //  mostrare il countdown
+    }, 10); // aggiornamento ogni 10ms
+  }
+
+  // impostare la durata del countdown in millisecondi
+  startCountdown(40000);
+};
+
+/* circle timer fine */
