@@ -1,11 +1,12 @@
 window.onload = function () {
   let progressoCerchio = document.querySelector(".progresso");
-  let raggio =
-    progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
+  let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
   let circonferenza = raggio * 2 * Math.PI;
   /* dargli una circonferenza completa cercare dasharray e offset */
   progressoCerchio.style.strokeDasharray = circonferenza;
   progressoCerchio.style.strokeDashoffset = circonferenza;
+
+  let intervallo;
 
   /* avanzamento del "progresso cerchio" */
   function avanzamento(percent) {
@@ -20,7 +21,7 @@ window.onload = function () {
 
   function inizioCount(duration) {
     let start = Date.now();
-    let intervallo = setInterval(function () {
+    intervallo = setInterval(function () {
       let durata = Date.now() - start;
 
       /* calcolare la percentuale del tempo trascorso e se arriva al 100%bloccare con clear interval */
@@ -30,11 +31,16 @@ window.onload = function () {
         clearInterval(intervallo);
       }
       avanzamento(100 - percent); // mostrare il countdown
-    });
+    }, 100);
   }
 
-  // Imposta la durata del countdown in millisecondi
-  inizioCount(40000);
+  function resetTimer(duration) {
+    clearInterval(intervallo); // ferma il timer corrente
+    avanzamento(100); // resetta il cerchio di progresso
+    inizioCount(duration); // avvia un nuovo countdown
+  }
+
+  const duration = 40000;
 
   // Funzioni per la gestione delle domande
   const questions = [
@@ -101,8 +107,7 @@ window.onload = function () {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question:
-        "What is the code name for the mobile operating system Android 7.0?",
+      question: "What is the code name for the mobile operating system Android 7.0?",
       correct_answer: "Nougat",
       incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
     },
@@ -126,8 +131,7 @@ window.onload = function () {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question:
-        "Which programming language shares its name with an island in Indonesia?",
+      question: "Which programming language shares its name with an island in Indonesia?",
       correct_answer: "Java",
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
@@ -145,6 +149,8 @@ window.onload = function () {
       getReuslt();
       return;
     }
+
+    resetTimer(duration); // Resetta il timer ogni volta che mostri una nuova domanda
 
     // Cambio il testo della domanda
     textQuestion.innerText = questions[index].question;
