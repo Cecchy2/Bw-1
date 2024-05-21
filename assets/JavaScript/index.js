@@ -81,11 +81,13 @@ const questions = [
   },
 ];
 
-const textQuestion = document.getElementById("domanda");
+/* const textQuestion = document.getElementById("domanda");
 console.log(questions);
 
 const risposteUtente = [];
 let punteggioUtente = 0;
+let indexCurrentQuestion = 0;
+
 
 for (let i = 0; i < questions.length; i++) {
   // cambio il testo della domanda
@@ -116,10 +118,69 @@ for (let i = 0; i < questions.length; i++) {
         punteggioUtente += 0; // se la risposta è sbagliata +0 punti
       }
       console.log("punteggio= ", punteggioUtente);
+
+      // devo creare un delay
+
+      // alla pressione del tasto, si genera una nuova domanda con nuove risposte
+      sezioneRisposte.innerHTML = "";
+    });
+
+    textQuestion.innerText = questions[i].question;
+    sezioneRisposte.appendChild(btnRisposta);
+  });
+} */
+
+const textQuestion = document.getElementById("domanda");
+const sezioneRisposte = document.getElementById("risposte");
+
+const risposteUtente = [];
+let punteggioUtente = 0; // contatore punteggio utente
+let currentQuestionIndex = 0; // contatore domande
+
+function mostraDomanda(index) {
+  if (index >= questions.length) {
+    getReuslt();
+    return;
+  }
+
+  // Cambio il testo della domanda
+  textQuestion.innerText = questions[index].question;
+
+  // Creo un array con tutte le risposte di una domanda
+  const arrayRisposte = [questions[index].correct_answer, ...questions[index].incorrect_answers];
+
+  // Pulisco la sezione risposte prima di creare i bottoni
+  sezioneRisposte.innerHTML = "";
+
+  // Itero gli elementi dell'array con le risposte per generare tanti bottoni quante sono le risposte
+  arrayRisposte.forEach((currentAnswer) => {
+    const btnRisposta = document.createElement("button");
+    btnRisposta.innerText = currentAnswer;
+    btnRisposta.classList.add("button");
+
+    // Aggiungo event listener click ai bottoni
+    btnRisposta.addEventListener("click", () => {
+      if (btnRisposta.innerText === questions[index].correct_answer) {
+        console.log("Risposta esatta");
+        punteggioUtente += 1; // Se la risposta è corretta +1 punto
+      } else {
+        console.log("Risposta errata");
+      }
+      console.log("Punteggio= ", punteggioUtente);
+
+      // Aggiungo un delay di 1 secondo prima di passare alla prossima domanda
+      setTimeout(() => {
+        mostraDomanda(index + 1);
+      }, 1000);
     });
 
     sezioneRisposte.appendChild(btnRisposta);
   });
-
-  break;
 }
+
+const getReuslt = () => {
+  window.location.href = "resultPage.html";
+};
+
+// Mostra la prima domanda
+mostraDomanda(currentQuestionIndex);
