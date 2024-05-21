@@ -72,7 +72,7 @@ main {
 .progresso{
     fill: none;
     stroke: aqua;
-    stroke-width: 10;
+    stroke-width: 20;
     
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
