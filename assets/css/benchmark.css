@@ -5,6 +5,7 @@ head{
     width: 150px;
     margin-left: 4em;
     margin-top: 3em;
+    padding-bottom: 10em;
 }  
 #timer{
     display: inline;
@@ -78,4 +79,8 @@ main {
 }
 #circleTimer{
     text-align: right;
+    display: inline;
+}
+#circleTimer svg{
+margin-left: 40em;
 }
