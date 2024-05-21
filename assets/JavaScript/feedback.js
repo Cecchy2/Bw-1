@@ -14,7 +14,7 @@ const stelleColorate = () => {
 const coloraStelle = (voto, stelle) => {
   for (let i = 0; i < stelle.length; i++) {
     if (i < voto) {
-      stelle[i].style.fill = "rgb(224, 224, 224)";
+      stelle[i].style.fill = "rgb(0, 255, 255)";
     } else {
       stelle[i].style.fill = "";
     }
