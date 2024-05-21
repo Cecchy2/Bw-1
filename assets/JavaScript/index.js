@@ -101,9 +101,9 @@ for (let i = 0; i < questions.length; i++) {
   sezioneRisposte.innerHTML = "";
 
   // itero gli elementi dell'array con le risposte per generare tanti bottoni quante sono le risposte
-  arrayRisposte.forEach((element) => {
+  arrayRisposte.forEach((currentAnswer) => {
     const btnRisposta = document.createElement("button");
-    btnRisposta.innerText = element;
+    btnRisposta.innerText = currentAnswer;
     btnRisposta.classList.add("button");
 
     // aggiungo event listener click ai bottoni
@@ -115,12 +115,12 @@ for (let i = 0; i < questions.length; i++) {
         console.log("risposta errata");
         punteggioUtente += 0; // se la risposta è sbagliata +0 punti
       }
+      console.log("punteggio= ", punteggioUtente);
     });
 
     // CONTROLLA IL CONTATORE DEL PUNTEGGIO NON FUNZIONA
 
     sezioneRisposte.appendChild(btnRisposta);
-    console.log("punteggio= ", punteggioUtente);
   });
 
   break;
