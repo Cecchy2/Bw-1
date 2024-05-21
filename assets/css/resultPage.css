@@ -81,13 +81,13 @@ c{
 }
 .box .percent svg {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 270px;
+    height: 270px;
 
 }
 .box .percent svg circle{
-    width: 200px;
-    height: 200px;
+    width: 270px;
+    height: 270px;
     fill: transparent;
     stroke-width: 15;
     stroke: #09eaf1;
@@ -103,7 +103,7 @@ c{
     
 }
 .box .percent svg circle:nth-child(2){
-    stroke-dashoffset: calc(440 - (440 * 70)/ 100);
+    stroke-dashoffset: calc(440 - (440 * 100)/ 100);
     stroke: rgb(243, 26, 225);
 }
 
