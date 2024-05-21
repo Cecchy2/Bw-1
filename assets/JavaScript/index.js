@@ -190,9 +190,9 @@ window.onload = function () {
   }
 
   const getReuslt = () => {
-    window.location.href = "resultPage.html";
     localStorage.setItem("risposteCorrette", risposteUtente.risposteCorrette);
     localStorage.setItem("risposteSbagliate", risposteUtente.risposteSbagliate);
+    window.location.href = "resultPage.html";
   };
 
   // Mostra la prima domanda
