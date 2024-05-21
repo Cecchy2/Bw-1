@@ -76,3 +76,6 @@ main {
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
 }
+#circleTimer{
+    text-align: right;
+}
