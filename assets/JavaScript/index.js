@@ -118,8 +118,6 @@ for (let i = 0; i < questions.length; i++) {
       console.log("punteggio= ", punteggioUtente);
     });
 
-    // CONTROLLA IL CONTATORE DEL PUNTEGGIO NON FUNZIONA
-
     sezioneRisposte.appendChild(btnRisposta);
   });
 
