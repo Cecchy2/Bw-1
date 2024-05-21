@@ -25,17 +25,15 @@ h1 {
 }
 main{
     text-align: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
     
 }
 .blocchi{
     display: inline-block;
-    margin: 5%
-}
-#torta h3 {
-
-}
-
+    margin: 4%;
     
+}
 
 footer{
     text-align: center;
@@ -74,38 +72,14 @@ a{
     text-decoration: none;
     color: white;
 }
-c{
- 
-    
-}
-.secondocerchio{
-  
-}
-.box .percent svg {
-    position: relative;
-    width: 290px;
-    height: 290px;
 
-}
-.box .percent svg circle{
-    width: 290px;
-    height: 290px;
-    fill: transparent;
-    stroke-width: 15;
-    stroke: #09eaf1;
-    transform: translate(5px,5px);
-    stroke-dasharray: 440;
-    stroke-dashoffset: 440;
-    stroke-linecap: round;
-    
-}
-.box .percentsvg circle:nth-child(1){
-    stroke: dashoffset 0;
-    stroke: #09eaf1;
-    
-}
 .box .percent svg circle:nth-child(2){
     stroke-dashoffset: calc(440 - (440 * 100)/ 100);
     stroke: rgb(243, 26, 225);
+}
+.donut{
+    position: absolute;
+    right: 19%;
+    bottom: 12%;
 }
 
