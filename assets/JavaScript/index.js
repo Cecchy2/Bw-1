@@ -29,6 +29,7 @@ window.onload = function () {
       if (percent >= 100) {
         percent = 100;
         clearInterval(intervallo);
+        mostraDomanda(currentQuestionIndex + 1);
       }
       avanzamento(100 - percent); // mostrare il countdown
     }, 100);
