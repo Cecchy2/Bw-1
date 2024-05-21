@@ -198,4 +198,6 @@ const getReuslt = () => {
 };
 
 // Mostra la prima domanda
-mostraDomanda(currentQuestionIndex);
+window.onload = () => {
+  mostraDomanda(currentQuestionIndex);
+};
