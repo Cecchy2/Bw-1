@@ -54,7 +54,7 @@ main,footer{
     padding-top: 5em;
     padding-bottom: 3em;
 }
-#questionCounter span{
+#totalQuestions{
     color: #D20094;
 }
 main {
