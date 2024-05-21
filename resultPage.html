@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/resultPage.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>resultPage</title>
-  </head>
 
-  <body>
-    <header>
-      <img src="/assets/imgs/epicode_logo.png" alt="logo epicode" id="epicodeLogo" />
-    </header>
-    <section id="titolo">
-      <h1>Results</h1>
-      <h2>The summary of your answers:</h2>
-    </section>
-    <div class="box">
-      <div class="percent">
-        <svg>
-          <circle cx="70" cy="70" r="70"></circle>
-          <circle cx="70" cy="70" r="70"></circle>
-          
-        </svg>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/resultPage.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet" />
+  <title>resultPage</title>
+</head>
 
+<body>
+  <header>
+    <img src="/assets/imgs/epicode_logo.png" alt="logo epicode" id="epicodeLogo" />
+  </header>
+  <section id="titolo">
+    <h1>Results</h1>
+    <h2>The summary of your answers:</h2>
+  </section>
+  <div class="box">
+    <div class="percent">
+      <svg>
+        <circle cx="70" cy="70" r="70"></circle>
+        <circle cx="70" cy="70" r="70"></circle>
 
-      </div>
+      </svg>
+
 
     </div>
-    
-   
-    <main>
-      <section class="blocchi" id="correct">
-        <p>Correct</p>
-        <p><strong>66.7%</strong></p>
-        <h3>4/6 questions</h3>
-      </section>
-      <section class="blocchi" id="torta">
-        <h3>congratulations! <br /><span>You passed the exam</span></h3>
-        <p>
-          we'll send you the certificate <br />in few minutes. <br />Check your email
-          (including <br />
-          promotions /spam folder)
-        </p>
-      </section>
-      <section class="blocchi" id="wrong">
-        <p>Wrong</p>
-        <p>33.6%</p>
-        <h3>2/6 questions</h3>
-      </section>
-    </main>
-    <footer>
-      <button>
-        <a href="Feedback.html"><b>RATE US</b></a>
-      </button>
-    </footer>
-  </body>
+
+  </div>
+
+
+  <main>
+    <section class="blocchi" id="correct">
+      <p>Correct</p>
+      <p id="correctAnswersPercentage"></p>
+      <h3> <span id="correctAnswersNumber"></span>/<span class="totalQuestionNumber"></span>
+        questions</h3>
+    </section>
+    <section class="blocchi" id="torta">
+      <h3>Congratulations! <br /><span>You passed the exam</span></h3>
+      <p>
+        we'll send you the certificate <br />in few minutes. <br />Check your email
+        (including <br />
+        promotions /spam folder)
+      </p>
+    </section>
+    <section class="blocchi" id="wrong">
+      <p>Wrong</p>
+      <p id="wrongAnswersPercentage"></p>
+      <h3> <span id="wrongAnswersNumber"></span>/<span class="totalQuestionNumber"></span> questions
+      </h3>
+    </section>
+  </main>
+  <footer>
+    <button>
+      <a href="Feedback.html"><b>RATE US</b></a>
+    </button>
+  </footer>
+  <script src="./assets/JavaScript/benchmarck.js"></script>
+</body>
+
 </html>

@@ -5,18 +5,13 @@ const questions = [
     difficulty: "easy",
     question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
-    incorrect_answers: [
-      "Central Process Unit",
-      "Computer Personal Unit",
-      "Central Processor Unit",
-    ],
+    incorrect_answers: ["Central Process Unit", "Computer Personal Unit", "Central Processor Unit"],
   },
   {
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -32,8 +27,7 @@ const questions = [
     category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question:
-      "Pointers were not used in the original C programming language; they were added later on in C++.",
+    question: "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -41,8 +35,7 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "What is the most preferred image format used for logos in the Wikimedia database?",
+    question: "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     incorrect_answers: [".png", ".jpeg", ".gif"],
   },
@@ -52,11 +45,7 @@ const questions = [
     difficulty: "easy",
     question: "In web design, what does CSS stand for?",
     correct_answer: "Cascading Style Sheet",
-    incorrect_answers: [
-      "Counter Strike: Source",
-      "Corrective Style Sheet",
-      "Computer Style Sheet",
-    ],
+    incorrect_answers: ["Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"],
   },
   {
     category: "Science: Computers",
@@ -92,60 +81,16 @@ const questions = [
   },
 ];
 
-/* const textQuestion = document.getElementById("domanda");
-console.log(questions);
-
-const risposteUtente = [];
-let punteggioUtente = 0;
-let indexCurrentQuestion = 0;
-
-
-for (let i = 0; i < questions.length; i++) {
-  // cambio il testo della domanda
-  textQuestion.innerText = questions[i].question;
-
-  // creo un array con tutte le risposte di una domanda
-  const arrayRisposte = [questions[i].correct_answer, ...questions[i].incorrect_answers];
-
-  // creo un riferimento alla sezione dove andranno le risposte
-  const sezioneRisposte = document.getElementById("risposte");
-
-  // pulisco la sezione risposte prima di creare i bottoni
-  sezioneRisposte.innerHTML = "";
-
-  // itero gli elementi dell'array con le risposte per generare tanti bottoni quante sono le risposte
-  arrayRisposte.forEach((currentAnswer) => {
-    const btnRisposta = document.createElement("button");
-    btnRisposta.innerText = currentAnswer;
-    btnRisposta.classList.add("button");
-
-    // aggiungo event listener click ai bottoni
-    btnRisposta.addEventListener("click", (event) => {
-      if (btnRisposta.innerText === questions[i].correct_answer) {
-        console.log("riposta esatta");
-        punteggioUtente += 1; // se la risposta è corretta +1 punto
-      } else {
-        console.log("risposta errata");
-        punteggioUtente += 0; // se la risposta è sbagliata +0 punti
-      }
-      console.log("punteggio= ", punteggioUtente);
-
-      // devo creare un delay
-
-      // alla pressione del tasto, si genera una nuova domanda con nuove risposte
-      sezioneRisposte.innerHTML = "";
-    });
-
-    textQuestion.innerText = questions[i].question;
-    sezioneRisposte.appendChild(btnRisposta);
-  });
-} */
-
 const textQuestion = document.getElementById("domanda");
 const sezioneRisposte = document.getElementById("risposte");
 
-const risposteUtente = [];
-let punteggioUtente = 0; // contatore punteggio utente
+const risposteUtente = {
+  risposteCorrette: 0,
+  risposteSbagliate: 0,
+};
+
+let totalCorrectAnswers = 0; // contatore risposte corrette
+let totalWrongAnswers = 0; // contatore risposte sbagliate
 let currentQuestionIndex = 0; // contatore domande
 
 function mostraDomanda(index) {
@@ -158,10 +103,7 @@ function mostraDomanda(index) {
   textQuestion.innerText = questions[index].question;
 
   // Creo un array con tutte le risposte di una domanda
-  const arrayRisposte = [
-    questions[index].correct_answer,
-    ...questions[index].incorrect_answers,
-  ];
+  const arrayRisposte = [questions[index].correct_answer, ...questions[index].incorrect_answers];
   arrayRisposte.sort(() => Math.random() - 0.5);
 
   // Pulisco la sezione risposte prima di creare i bottoni
@@ -180,11 +122,15 @@ function mostraDomanda(index) {
     btnRisposta.addEventListener("click", () => {
       if (btnRisposta.innerText === questions[index].correct_answer) {
         console.log("Risposta esatta");
-        punteggioUtente += 1; // Se la risposta è corretta +1 punto
+        totalCorrectAnswers += 1; // Se la risposta è corretta +1 correct answers
+        risposteUtente.risposteCorrette += 1;
       } else {
         console.log("Risposta errata");
+        totalWrongAnswers += 1; // Se la risposta è sbagliata +1 wrong answers
+        risposteUtente.risposteSbagliate += 1;
       }
-      console.log("Punteggio= ", punteggioUtente);
+      console.log("risposte corrette= ", risposteUtente.risposteCorrette);
+      console.log("risposte sbagliate= ", risposteUtente.risposteSbagliate);
 
       // Aggiungo un delay di 1 secondo prima di passare alla prossima domanda
       setTimeout(() => {
@@ -198,6 +144,8 @@ function mostraDomanda(index) {
 
 const getReuslt = () => {
   window.location.href = "resultPage.html";
+  localStorage.setItem("risposteCorrette", risposteUtente.risposteCorrette);
+  localStorage.setItem("risposteSbagliate", risposteUtente.risposteSbagliate);
 };
 
 // Mostra la prima domanda
