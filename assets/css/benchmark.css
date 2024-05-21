@@ -1,6 +1,5 @@
-head{
-    display: inline-block;
-}
+
+
 #epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
     width: 150px;
     margin-left: 4em;
@@ -9,8 +8,7 @@ head{
 }  
 #timer{
     display: inline;
-    margin-left: 80em;
-    
+    margin-left: 80em;    
 }
 img{
     display: inline;
@@ -21,6 +19,7 @@ body {
     font-family: "Inter", sans-serif;
     font-size: 16px;
     color: white;
+     height: 100em;
 }
 h1 {
     font-family: "Outfit", sans-serif;
@@ -34,6 +33,7 @@ span{
 
 main,footer{
     text-align: center;
+    height: 20em;
 }
 .button {
     width: 400px;
