@@ -198,3 +198,11 @@ window.onload = function () {
   // Mostra la prima domanda
   mostraDomanda(currentQuestionIndex);
 };
+
+const totalQuestionNumber = document.querySelectorAll(".totalNumberQuestions");
+totalQuestionNumber.forEach((currentElement) => {
+  currentElement.innerText = questions.length;
+});
+
+const resultCorrectAnswers = document.getElementById("resultCorrectAnswersNumber");
+resultCorrectAnswers.innerText = correctAnswers;
