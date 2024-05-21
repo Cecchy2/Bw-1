@@ -32,8 +32,11 @@ main{
     margin: 5%
 }
 #torta h3 {
-    
+
 }
+
+    
+
 footer{
     text-align: center;
 }
@@ -69,16 +72,38 @@ a{
     text-decoration: none;
     color: white;
 }
-circle{
-    fill: none;
-    stroke: aqua;
-    stroke-width: 15;
-    transform: rotate(-90deg);
-    stroke: dasharray 100 100 ;
-    transform-origin: 50%;
-    animation: rellenar;
+c{
+ 
     
 }
 .secondocerchio{
-    color: magenta;
+  
 }
+.box .percent svg {
+    position: relative;
+    width: 200px;
+    height: 200px;
+
+}
+.box .percent svg circle{
+    width: 200px;
+    height: 200px;
+    fill: transparent;
+    stroke-width: 15;
+    stroke: #09eaf1;
+    transform: translate(5px,5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke-linecap: round;
+    
+}
+.box .percentsvg circle:nth-child(1){
+    stroke: dashoffset 0;
+    stroke: #09eaf1;
+    
+}
+.box .percent svg circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (440 * 70)/ 100);
+    stroke: rgb(243, 26, 225);
+}
+
