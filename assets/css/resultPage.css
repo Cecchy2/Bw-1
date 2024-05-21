@@ -41,7 +41,7 @@ footer{
     text-align: center;
 }
 button{
-    background-color: rgb(38, 15, 84);
+    background-color: transparent;
     border: solid 1px white;
     height: 60px;
     width: 300px;
