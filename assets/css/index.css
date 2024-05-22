@@ -61,6 +61,7 @@ label {
 }
 
 button {
+  margin-left: 85%;
   background-color: #00FFFF;
   border-color: #00FFFF;
   box-shadow: 2px 0px 16px 0px #00FFFF;
