@@ -9,31 +9,29 @@
 
   <body>
     <header>
-      <div id="head">
-        <img
-          id="epicodeLogo"
-          src="./assets/imgs/epicode_logo.png"
-          alt="LogoEpicode"
-        />
+      <div id="header">
+        <img id="epicodeLogo" src="./assets/imgs/epicode_logo.png" alt="LogoEpicode" />
 
-        <div id="circleTimer">
-          <svg width="250" height="250">
-            <circle class="traccia" r="100" cx="125" cy="125"></circle>
-            <circle class="progresso" r="100" cx="125" cy="125"></circle>
-          </svg>
-        </div>
+        <!-- <div id="circleTimer"> -->
       </div>
+      <!--</div>  -->
     </header>
+    <section id="timer">
+      <svg width="250" height="250">
+        <!-- <circle class="traccia" r="100" cx="125" cy="125"></circle> -->
+        <circle class="progresso" r="55" cx="125" cy="125"></circle>
+      </svg>
+    </section>
     <main>
       <h1 id="domanda"></h1>
       <div id="risposte"></div>
     </main>
     <footer>
       <div id="questionCounter">
-        <h1>
+        <p id="contatore">
           QUESTION <span id="currentQuestionNumber"></span>
           <span id="totalQuestions">/10</span>
-        </h1>
+        </p>
       </div>
     </footer>
     <script src="./assets/JavaScript/index.js"></script>
