@@ -139,5 +139,5 @@ if (risposteSbagliate > 5) {
   const h3 = document.getElementById("h3");
   const paragrafo = document.getElementById("paragrafo");
   h3.innerText = "MI DISPIACE";
-  paragrafo.innerText = "NON SEI PASSATO";
+  paragrafo.innerText = "NON SEI PASSATO!";
 }
