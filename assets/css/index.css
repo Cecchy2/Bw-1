@@ -59,6 +59,8 @@ form {
 
 label {
   margin-right: 17%;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 button {
@@ -83,8 +85,7 @@ a:visited {
   color: black;
 }
 
-ul span{
-<<<<<<<<< Temporary merge branch 1
+span{
   font-weight: 700;
 }
 
