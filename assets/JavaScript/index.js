@@ -1,7 +1,18 @@
+let currentQuestionIndex = 0; // contatore domande
+let progressoCerchio = document.querySelector(".progresso");
+let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
+let circonferenza = raggio * 2 * Math.PI;
+const risposteUtente = {
+  risposteCorrette: 0,
+  risposteSbagliate: 0,
+};
+let totalCorrectAnswers = 0; // contatore risposte corrette
+let totalWrongAnswers = 0; // contatore risposte sbagliate
+
 window.onload = function () {
-  let progressoCerchio = document.querySelector(".progresso");
-  let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
-  let circonferenza = raggio * 2 * Math.PI;
+  //let progressoCerchio = document.querySelector(".progresso");
+  //let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
+  //let circonferenza = raggio * 2 * Math.PI;
   /* dargli una circonferenza completa cercare dasharray e offset */
   progressoCerchio.style.strokeDasharray = circonferenza;
   progressoCerchio.style.strokeDashoffset = circonferenza;
@@ -28,7 +39,9 @@ window.onload = function () {
       if (percent >= 100) {
         percent = 100;
         clearInterval(intervallo);
-        mostraDomanda(currentQuestionIndex + 1);
+        currentQuestionIndex += 1;
+        risposteUtente.risposteSbagliate += 1;
+        mostraDomanda(currentQuestionIndex);
       }
       avanzamento(100 - percent); // mostrare il countdown
     }, 100);
@@ -129,14 +142,14 @@ window.onload = function () {
   const textQuestion = document.getElementById("domanda");
   const sezioneRisposte = document.getElementById("risposte");
 
-  const risposteUtente = {
+  /* const risposteUtente = {
     risposteCorrette: 0,
     risposteSbagliate: 0,
   };
 
   let totalCorrectAnswers = 0; // contatore risposte corrette
-  let totalWrongAnswers = 0; // contatore risposte sbagliate
-  let currentQuestionIndex = 0; // contatore domande
+  let totalWrongAnswers = 0; // contatore risposte sbagliate */
+  //   let currentQuestionIndex = 0; // contatore domande
 
   function mostraDomanda(index) {
     if (index >= questions.length) {
