@@ -84,3 +84,6 @@ a:visited {
 ul span{
   font-weight: 700;
 }
+button:hover{
+  cursor: pointer;
+}
