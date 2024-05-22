@@ -34,16 +34,15 @@ main p {
   width: 480px;
   margin-bottom: 4%;
   margin-top: 5px;
+  font-size: 14px;
 }
 
 li {
   padding-top: 1%;
+  font-size: 14px;
 }
 
-span {
-  font-weight: 700;
-  
-}
+
 
 h2 {
   color: rgb(194, 21, 141);
@@ -53,7 +52,7 @@ h2 {
 
 form {
   margin-top: 7%;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
 }
 
 label {
@@ -80,4 +79,8 @@ a {
 a:visited {
   text-decoration: none;
   color: black;
+}
+
+ul span{
+  font-weight: 700;
 }
