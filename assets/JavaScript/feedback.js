@@ -1,7 +1,9 @@
+let voto = 0;
+
 const stelleColorate = () => {
   const stelle = document.querySelectorAll(".stella path");
   console.log(stelle);
-  let voto = 0;
+  voto = 0;
 
   for (let i = 0; i < stelle.length; i++) {
     stelle[i].addEventListener("click", (event) => {
@@ -22,3 +24,15 @@ const coloraStelle = (voto, stelle) => {
 };
 
 stelleColorate();
+
+const button = document.getElementById("button");
+
+button.addEventListener("click", (event) => {
+  event.preventDefault();
+  const form = document.getElementById("form");
+  const input = document.getElementById("input");
+  const messaggioSalvato = input.value + "" + voto;
+  console.log(messaggioSalvato);
+  input.value = " ";
+  window.alert("il messaggio è stato inviato");
+});
