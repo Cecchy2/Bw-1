@@ -83,7 +83,12 @@ a:visited {
   color: black;
 }
 
-span{
+ul span{
+<<<<<<<<< Temporary merge branch 1
   font-weight: 700;
 }
 
+
+button:hover{
+  cursor: pointer;
+}
