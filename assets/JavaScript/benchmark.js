@@ -27,7 +27,9 @@ window.onload = function () {
     let tempoRimanenteSecondi = Math.ceil(((percent / 100) * duration) / 1000);
 
     //  timer numeric0 aggoirnato con il tempo rimanente
-    document.getElementById("timerNumerico").innerText = tempoRimanenteSecondi;
+    document.getElementById("timerNumerico").innerHTML = `${tempoRimanenteSecondi}
+    <tspan x="130" dy="-38" font-size="10">SECONDS</tspan>
+    <tspan x="125" dy="58" font-size="10">REMAINING</tspan>`;
   }
 
   /* gestire il countdown */
@@ -59,7 +61,7 @@ window.onload = function () {
     inizioCount(duration); // avvia un nuovo countdown
   }
 
-  const duration = 2000;
+  const duration = 40000;
 
   // Funzioni per la gestione delle domande
   const questions = [
