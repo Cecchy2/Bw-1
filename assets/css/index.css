@@ -4,12 +4,12 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   color: white;
-  margin-left: 10%;
 }
 
 #epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
   width: 150px;  
   margin-top: 3em;
+  margin-left: 4em;
 }
 
 #titolo {
@@ -26,6 +26,10 @@ h1 {
   
 }
 
+main, form {
+  width: 60%;
+  margin: auto;
+}
 main p {
   width: 480px;
   margin-bottom: 4%;
