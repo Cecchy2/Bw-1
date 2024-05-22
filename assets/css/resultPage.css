@@ -78,9 +78,9 @@ a{
     stroke: rgb(243, 26, 225);
 }
 .donut{
-    position: absolute;
-    right: 19%;
-    bottom: 12%;
+    position: fixed;
+    right: 31.5%;
+    bottom: 22%;
 }
 .exam{
     color: rgb(0, 255, 255);
