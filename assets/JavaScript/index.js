@@ -261,7 +261,7 @@ proceedButton.addEventListener('click', function(event) {
       alert('Devi accettare i termini per procedere.');
   } else {
       console.log('Checkbox selezionata'); // Log della selezione della checkbox
-      window.location.href = 'benchmark.html'; // Reindirizza alla pagina
+      
    
   }
 });
