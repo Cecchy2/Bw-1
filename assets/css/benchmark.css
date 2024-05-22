@@ -15,16 +15,15 @@ header{
 
 #epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
     width: 150px;
-    margin-left: 100px;
-
-    
+    margin-left: 4em; 
 }  
-#timer{
+
+/* #timer{
     width: 40%;
     position: relative;
     left: 70%;
     bottom: 100px
-}
+} */
 
 h1 {
     font-family: "Outfit", sans-serif;
@@ -44,7 +43,7 @@ span{
 
 main,footer{
     text-align: center;
-    width: 100%;
+    width: 60%;
     margin: auto;
 }
 .button {
@@ -106,12 +105,17 @@ margin-left: 40em;
     font-weight: 300;
 }
 
-#timerContainer{
+/* #timerContainer{
     position: absolute;
     margin: 0 auto;
     bottom:154px;
     left: 105px;
-}
+} */
 #timerNumerico {
     fill: white;
+}
+
+svg {
+    margin-left: 65%;
+    margin-bottom: 2.5em;
 }
