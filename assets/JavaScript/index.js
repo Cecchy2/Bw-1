@@ -1,6 +1,7 @@
 let currentQuestionIndex = 0; // contatore domande
 let progressoCerchio = document.querySelector(".progresso");
-let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
+let raggio =
+  progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
 let circonferenza = raggio * 2 * Math.PI;
 const risposteUtente = {
   risposteCorrette: 0,
@@ -21,7 +22,14 @@ window.onload = function () {
 
   /* avanzamento del "progresso cerchio" */
   function avanzamento(percent) {
-    progressoCerchio.style.strokeDashoffset = circonferenza - (percent / 100) * circonferenza;
+    progressoCerchio.style.strokeDashoffset =
+      circonferenza - (percent / 100) * circonferenza;
+
+    //  tempo rimanente in secondi
+    let tempoRimanenteSecondi = Math.ceil(((percent / 100) * duration) / 1000);
+
+    //  timer numeric0 aggoirnato con il tempo rimanente
+    document.getElementById("timerNumerico").innerText = tempoRimanenteSecondi;
   }
 
   /* gestire il countdown */
@@ -63,13 +71,18 @@ window.onload = function () {
       difficulty: "easy",
       question: "What does CPU stand for?",
       correct_answer: "Central Processing Unit",
-      incorrect_answers: ["Central Process Unit", "Computer Personal Unit", "Central Processor Unit"],
+      incorrect_answers: [
+        "Central Process Unit",
+        "Computer Personal Unit",
+        "Central Processor Unit",
+      ],
     },
     {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+      question:
+        "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
       correct_answer: "Final",
       incorrect_answers: ["Static", "Private", "Public"],
     },
@@ -85,7 +98,8 @@ window.onload = function () {
       category: "Science: Computers",
       type: "boolean",
       difficulty: "easy",
-      question: "Pointers were not used in the original C programming language; they were added later on in C++.",
+      question:
+        "Pointers were not used in the original C programming language; they were added later on in C++.",
       correct_answer: "False",
       incorrect_answers: ["True"],
     },
@@ -93,7 +107,8 @@ window.onload = function () {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question: "What is the most preferred image format used for logos in the Wikimedia database?",
+      question:
+        "What is the most preferred image format used for logos in the Wikimedia database?",
       correct_answer: ".svg",
       incorrect_answers: [".png", ".jpeg", ".gif"],
     },
@@ -103,13 +118,18 @@ window.onload = function () {
       difficulty: "easy",
       question: "In web design, what does CSS stand for?",
       correct_answer: "Cascading Style Sheet",
-      incorrect_answers: ["Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"],
+      incorrect_answers: [
+        "Counter Strike: Source",
+        "Corrective Style Sheet",
+        "Computer Style Sheet",
+      ],
     },
     {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question: "What is the code name for the mobile operating system Android 7.0?",
+      question:
+        "What is the code name for the mobile operating system Android 7.0?",
       correct_answer: "Nougat",
       incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
     },
@@ -133,7 +153,8 @@ window.onload = function () {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question: "Which programming language shares its name with an island in Indonesia?",
+      question:
+        "Which programming language shares its name with an island in Indonesia?",
       correct_answer: "Java",
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
@@ -163,7 +184,10 @@ window.onload = function () {
     textQuestion.innerText = questions[index].question;
 
     // Creo un array con tutte le risposte di una domanda
-    const arrayRisposte = [questions[index].correct_answer, ...questions[index].incorrect_answers];
+    const arrayRisposte = [
+      questions[index].correct_answer,
+      ...questions[index].incorrect_answers,
+    ];
     arrayRisposte.sort(() => Math.random() - 0.5);
 
     // Pulisco la sezione risposte prima di creare i bottoni
@@ -217,7 +241,9 @@ totalQuestionNumber.forEach((currentElement) => {
   currentElement.innerText = questions.length;
 });
 
-const resultCorrectAnswers = document.getElementById("resultCorrectAnswersNumber");
+const resultCorrectAnswers = document.getElementById(
+  "resultCorrectAnswersNumber"
+);
 resultCorrectAnswers.innerText = correctAnswers;
 
 const form = document.getElementById("form");
