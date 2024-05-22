@@ -5,12 +5,20 @@ const stelleColorate = () => {
   console.log(stelle);
   voto = 0;
 
-  for (let i = 0; i < stelle.length; i++) {
-    stelle[i].addEventListener("click", (event) => {
-      voto = i + 1;
+  stelle.forEach(function (stella, index) {
+    stella.addEventListener("mouseover", function () {
+      coloraStelle(index + 1, stelle);
+    });
+
+    stella.addEventListener("mouseout", function () {
       coloraStelle(voto, stelle);
     });
-  }
+
+    stella.addEventListener("click", function () {
+      voto = index + 1;
+      coloraStelle(voto, stelle);
+    });
+  });
 };
 
 const coloraStelle = (voto, stelle) => {
