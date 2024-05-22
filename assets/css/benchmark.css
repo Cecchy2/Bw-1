@@ -73,6 +73,9 @@ main {
 .traccia{
     stroke: lightgray;
     fill: none;
+    stroke-width: 20;
+    opacity: 0.3;
+    
 }
 .progresso{
     fill: none;
