@@ -98,5 +98,20 @@ for (let i = 0; i < totalQuestionNumber.length; i++) {
 
 correctAnswersNumber.innerText = risposteCorrette;
 wrongAnswersNumber.innerText = risposteSbagliate;
-correctAnswersPercentage.innerText = (risposteCorrette * 100) / questions.length + "%";
-wrongAnswersPercentage.innerText = (risposteSbagliate * 100) / questions.length + "%";
+const percentualeRisposteEsatteNumero = (risposteCorrette * 100) / questions.length;
+const percentualeRisposteSbagliateNumero = (risposteSbagliate * 100) / questions.length;
+
+const remainingPercentageCorrectNumero = 100 - percentualeRisposteEsatteNumero;
+const remainingPercentageWrongNumero = 100 - percentualeRisposteSbagliateNumero;
+
+correctAnswersPercentage.innerText = percentualeRisposteEsatteNumero + "%";
+wrongAnswersPercentage.innerText = percentualeRisposteSbagliateNumero + "%";
+
+const wrongAnswersPercentageDonught = document.getElementById("wrongPercentage");
+const correctAnswersPercentageDonught = document.getElementById("correctPercentage");
+
+wrongAnswersPercentageDonught.setAttribute("stroke-dasharray", `${percentualeRisposteSbagliateNumero} ${remainingPercentageWrongNumero}`);
+correctAnswersPercentageDonught.setAttribute("stroke-dasharray", `${percentualeRisposteEsatteNumero} ${remainingPercentageCorrectNumero}`);
+
+console.log(percentualeRisposteSbagliateNumero, remainingPercentageWrongNumero);
+console.log(percentualeRisposteEsatteNumero, remainingPercentageCorrectNumero);
