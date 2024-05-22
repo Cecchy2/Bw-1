@@ -35,11 +35,13 @@ main p {
   margin-bottom: 4%;
   margin-top: 5px;
   font-weight: 300;
+  letter-spacing: 1px;
 }
 
 li {
   padding-top: 1%;
   font-weight: 300;
+  letter-spacing: 1px;
 }
 
 
@@ -82,8 +84,11 @@ a:visited {
 }
 
 ul span{
+<<<<<<<<< Temporary merge branch 1
   font-weight: 700;
 }
+
+
 button:hover{
   cursor: pointer;
 }
