@@ -31,7 +31,7 @@ button.addEventListener("click", (event) => {
   event.preventDefault();
   const form = document.getElementById("form");
   const input = document.getElementById("input");
-  const messaggioSalvato = input.value + "" + voto;
+  const messaggioSalvato = input.value + " Il voto lasciato è " + voto;
   console.log(messaggioSalvato);
   input.value = " ";
   window.alert("il messaggio è stato inviato");
