@@ -85,10 +85,7 @@ a{
     margin: 0 auto;
 }
 
-/* .box .percent svg circle:nth-child(2){
-    stroke-dashoffset: calc(440 - (440 * 100)/ 100);
-    stroke: rgb(243, 26, 225);
-} */
+
 .donut{
     position: absolute;
   top: 23%;
