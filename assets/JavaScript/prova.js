@@ -571,79 +571,55 @@ const questionsHard = [
 
 const howManyQuestions = sessionStorage.getItem("numQuestions");
 const chosenDifficulty = sessionStorage.getItem("chosenDifficulty");
-console.log(howManyQuestions);
-console.log(chosenDifficulty);
-let currentQuestionIndex = 0; // contatore domande
+let currentQuestionIndex = 0;
 let progressoCerchio = document.querySelector(".progresso");
-let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
+let raggio = progressoCerchio.r.baseVal.value;
 let circonferenza = raggio * 2 * Math.PI;
 const risposteUtente = {
   risposteCorrette: 0,
   risposteSbagliate: 0,
 };
-/* let totalCorrectAnswers = 0; // contatore risposte corrette
-let totalWrongAnswers = 0; // contatore risposte sbagliate */
 
 window.onload = function () {
-  //let progressoCerchio = document.querySelector(".progresso");
-  //let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
-  //let circonferenza = raggio * 2 * Math.PI;
-  /* dargli una circonferenza completa cercare dasharray e offset */
   progressoCerchio.style.strokeDasharray = circonferenza;
   progressoCerchio.style.strokeDashoffset = circonferenza;
 
+  const duration = 40000;
   let intervallo;
 
-  /* avanzamento del "progresso cerchio" */
   function avanzamento(percent) {
     progressoCerchio.style.strokeDashoffset = circonferenza - (percent / 100) * circonferenza;
-
-    //  tempo rimanente in secondi
     let tempoRimanenteSecondi = Math.ceil(((percent / 100) * duration) / 1000);
-
-    //  timer numeric0 aggoirnato con il tempo rimanente
     document.getElementById("timerNumerico").innerHTML = `${tempoRimanenteSecondi}
-    <tspan x="130" dy="-38" font-size="10">SECONDS</tspan>
-    <tspan x="125" dy="58" font-size="10">REMAINING</tspan>`;
+      <tspan x="130" dy="-38" font-size="10">SECONDS</tspan>
+      <tspan x="125" dy="58" font-size="10">REMAINING</tspan>`;
   }
-
-  /* gestire il countdown */
-  /* impostare un punto di inizio */
-  /* date now */
-  /* calcolare il tempo trascorso dallo start al date now */
 
   function inizioCount(duration) {
     let start = Date.now();
     intervallo = setInterval(function () {
       let durata = Date.now() - start;
-
-      /* calcolare la percentuale del tempo trascorso e se arriva al 100%bloccare con clear interval */
       let percent = (durata / duration) * 100;
       if (percent >= 100) {
         percent = 100;
         clearInterval(intervallo);
-        currentQuestionIndex += 1;
         risposteUtente.risposteSbagliate += 1;
+        currentQuestionIndex += 1;
         mostraDomanda(currentQuestionIndex);
       }
-      avanzamento(100 - percent); // mostrare il countdown
+      avanzamento(100 - percent);
     }, 100);
   }
 
   function resetTimer(duration) {
-    clearInterval(intervallo); // ferma il timer corrente
-    avanzamento(100); // resetta il cerchio di progresso
-    inizioCount(duration); // avvia un nuovo countdown
+    clearInterval(intervallo);
+    avanzamento(100);
+    inizioCount(duration);
   }
-
-  const duration = 40000;
-
-  // Funzioni per la gestione delle domande
 
   const textQuestion = document.getElementById("domanda");
   const sezioneRisposte = document.getElementById("risposte");
 
-  // creo una funzione per mettere le domande in ordine randomico
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -651,17 +627,17 @@ window.onload = function () {
     }
     return array;
   }
+
   shuffleArray(questionsEasy);
   shuffleArray(questionsMedium);
   shuffleArray(questionsHard);
 
   function mostraDomanda(index) {
     if (index >= howManyQuestions) {
-      getReuslt();
+      getResult();
       return;
     }
 
-    // creo un array dove mettere le risposte alle domande
     const arrayRisposte = [];
 
     let currentQuestion;
@@ -677,83 +653,36 @@ window.onload = function () {
         break;
     }
 
-    textQuestion.innerText = currentQuestion.question; // Cambio il testo della domanda
+    textQuestion.innerText = currentQuestion.question;
 
-    // Creo un array con tutte le risposte di una domanda e le mischio randomicamente
     arrayRisposte.push(currentQuestion.correct_answer, ...currentQuestion.incorrect_answers);
-    /* arrayRisposte.sort(() => Math.random() - 0.5); */
     shuffleArray(arrayRisposte);
-    console.log(arrayRisposte);
 
-    // Pulisco la sezione risposte prima di creare i bottoni
     sezioneRisposte.innerHTML = "";
-
-    // itero l'array con le risposte per generare tanti bottoni quante sono le risposte
-    arrayRisposte.forEach((currentAnswer) => {
-      const btnRisposta = document.createElement("button");
-      btnRisposta.innerText = currentAnswer;
-      btnRisposta.classList.add = "btn";
-      btnRisposta.addEventListener("click", (event) => {
-        checkAnswer(currentAnswer, currentQuestion.correct_answer);
+    arrayRisposte.forEach((risposta) => {
+      const button = document.createElement("button");
+      button.innerText = risposta;
+      button.classList.add("risposta");
+      button.addEventListener("click", function () {
+        clearInterval(intervallo);
+        if (risposta === currentQuestion.correct_answer) {
+          risposteUtente.risposteCorrette += 1;
+        } else {
+          risposteUtente.risposteSbagliate += 1;
+        }
+        currentQuestionIndex += 1;
+        mostraDomanda(currentQuestionIndex);
       });
-      sezioneRisposte.appendChild(btnRisposta);
+      sezioneRisposte.appendChild(button);
     });
 
     resetTimer(duration);
-
-    function checkAnswer(answer, correctAnswer) {
-      if (answer === correctAnswer) {
-        console.log("Risposta esatta");
-        risposteUtente.risposteCorrette += 1;
-        btnRisposta.style.backgroundColor = "green";
-      } else {
-        console.log("Risposta errata");
-        risposteUtente.risposteSbagliate += 1;
-        btnRisposta.style.backgroundColor = "red";
-        correctAnswerButton.style.backgroundColor = "green";
-      }
-      currentQuestionIndex += 1;
-      mostraDomanda(currentQuestionIndex);
-    }
-
-    /* // identifico il bottone con la risposta esatta per poi colorarlo di verde
-    if (currentAnswer === questions[index].correct_answer) {
-      correctAnswerButton = btnRisposta;
-    }
-
-    // aggiungo eventListener ai bottoni
-    btnRisposta.addEventListener("click", (event) => {
-      if (btnRisposta.innerText === questionsEasy[index].correct_answer) {
-        console.log("Risposta esatta");
-        risposteUtente.risposteCorrette += 1;
-        btnRisposta.style.backgroundColor = "green";
-      } else {
-        console.log("Risposta errata");
-        risposteUtente.risposteSbagliate += 1;
-        btnRisposta.style.backgroundColor = "red";
-        correctAnswerButton.style.backgroundColor = "green";
-      }
-      console.log("risposte corrette= ", risposteUtente.risposteCorrette);
-      console.log("risposte sbagliate= ", risposteUtente.risposteSbagliate);
-
-      // Aggiungo un delay di 1 secondo prima di passare alla prossima domanda
-      setTimeout(() => {
-        mostraDomanda(index + 1);
-      }, 1000);
-    });
-    sezioneRisposte.appendChild(btnRisposta);
-
-    resetTimer(duration); // Resetta il timer ogni volta che mostri una nuova domanda */
   }
 
-  const getReuslt = () => {
-    sessionStorage.setItem("risposteCorrette", risposteUtente.risposteCorrette);
-    sessionStorage.setItem("risposteSbagliate", risposteUtente.risposteSbagliate);
-    window.location.href = "resultPage.html";
-  };
+  function getResult() {
+    // Funzione per mostrare il risultato finale
+    alert(`Quiz terminato! Risposte corrette: ${risposteUtente.risposteCorrette}, Risposte sbagliate: ${risposteUtente.risposteSbagliate}`);
+  }
 
-  // Mostra la prima domanda
   mostraDomanda(currentQuestionIndex);
-  const totalQuestions = document.getElementById("totalQuestions");
-  totalQuestions.innerHTML = `/ ${howManyQuestions}`;
 };

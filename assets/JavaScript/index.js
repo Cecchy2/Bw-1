@@ -13,16 +13,9 @@ proceedButton.addEventListener("click", function (event) {
     console.log("Checkbox non selezionata"); // Log della mancata selezione della checkbox
     alert("Devi accettare i termini per procedere.");
   } else {
-    if (difficulty === "easy") {
-      sessionStorage.setItem("numQuestions", numQuestions);
-      window.location.href = "benchmarkEasy.html";
-    } else if (difficulty === "medium") {
-      sessionStorage.setItem("numQuestions", numQuestions);
-      window.location.href = "benchmarkMedium.html";
-    } else if (difficulty === "hard") {
-      sessionStorage.setItem("numQuestions", numQuestions);
-      window.location.href = "benchmarkHard.html";
-    }
+    sessionStorage.setItem("numQuestions", numQuestions);
+    sessionStorage.setItem("chosenDifficulty", difficulty);
+    window.location.href = "benchmark.html";
     console.log("Checkbox selezionata"); // Log della selezione della checkbox
   }
 });
