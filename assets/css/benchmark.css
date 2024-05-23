@@ -51,7 +51,7 @@ main,footer{
     height: 5em;
   background-color: transparent;
   border-radius: 50px 50px 50px 50px; 
-  box-shadow:  -1px -5px 3px -3px #FFFFFF;
+  box-shadow:  -1px -2px 3px -3px #FFFFFF;
   cursor: pointer;
   color: white;
   transition: all 0.3s;   
@@ -59,8 +59,10 @@ main,footer{
   
 }
 .button:hover {
-    background-color:  #c90090;
-    border-color: #c61895;
+    background: rgb(144,0,128);
+    background: linear-gradient(207deg, rgba(144,0,128,1) 0%, rgba(210,0,148,1) 100%);
+    border-color: rgb(144,0,128);
+    border-color: linear-gradient(207deg, rgba(144,0,128,1) 0%, rgba(210,0,148,1) 100%);
 }
 #questionCounter h1{
     font-size: 20px;
@@ -68,7 +70,8 @@ main,footer{
     padding-bottom: 3em;
 }
 #totalQuestions{
-    color: #D20094;
+    color: rgb(144,0,128);
+    color: linear-gradient(207deg, rgba(144,0,128,1) 0%, rgba(210,0,148,1) 100%);
 }
 
 
