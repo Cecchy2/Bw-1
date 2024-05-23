@@ -108,7 +108,8 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background-color: white;
+  background-color: transparent;
+  
 }
 
 input[type="checkbox"]:checked::after {
@@ -118,7 +119,7 @@ input[type="checkbox"]:checked::after {
   top: 2px;
   width: 6px;
   height: 10px;
-  border: solid black;
+  border: solid rgb(37, 209, 37);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
