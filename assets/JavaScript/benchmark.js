@@ -21,7 +21,8 @@ window.onload = function () {
 
   /* avanzamento del "progresso cerchio" */
   function avanzamento(percent) {
-    progressoCerchio.style.strokeDashoffset = circonferenza - (percent / 100) * circonferenza;
+    progressoCerchio.style.strokeDashoffset =
+      circonferenza - (percent / 100) * circonferenza;
 
     //  tempo rimanente in secondi
     let tempoRimanenteSecondi = Math.ceil(((percent / 100) * duration) / 1000);
@@ -71,13 +72,18 @@ window.onload = function () {
       difficulty: "easy",
       question: "What does CPU stand for?",
       correct_answer: "Central Processing Unit",
-      incorrect_answers: ["Central Process Unit", "Computer Personal Unit", "Central Processor Unit"],
+      incorrect_answers: [
+        "Central Process Unit",
+        "Computer Personal Unit",
+        "Central Processor Unit",
+      ],
     },
     {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+      question:
+        "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
       correct_answer: "Final",
       incorrect_answers: ["Static", "Private", "Public"],
     },
@@ -93,7 +99,8 @@ window.onload = function () {
       category: "Science: Computers",
       type: "boolean",
       difficulty: "easy",
-      question: "Pointers were not used in the original C programming language; they were added later on in C++.",
+      question:
+        "Pointers were not used in the original C programming language; they were added later on in C++.",
       correct_answer: "False",
       incorrect_answers: ["True"],
     },
@@ -101,7 +108,8 @@ window.onload = function () {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question: "What is the most preferred image format used for logos in the Wikimedia database?",
+      question:
+        "What is the most preferred image format used for logos in the Wikimedia database?",
       correct_answer: ".svg",
       incorrect_answers: [".png", ".jpeg", ".gif"],
     },
@@ -111,7 +119,11 @@ window.onload = function () {
       difficulty: "easy",
       question: "In web design, what does CSS stand for?",
       correct_answer: "Cascading Style Sheet",
-      incorrect_answers: ["Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"],
+      incorrect_answers: [
+        "Counter Strike: Source",
+        "Corrective Style Sheet",
+        "Computer Style Sheet",
+      ],
     },
     {
       category: "Science: Computers",
@@ -171,7 +183,10 @@ window.onload = function () {
     textQuestion.innerText = questions[index].question;
 
     // Creo un array con tutte le risposte di una domanda
-    const arrayRisposte = [questions[index].correct_answer, ...questions[index].incorrect_answers];
+    const arrayRisposte = [
+      questions[index].correct_answer,
+      ...questions[index].incorrect_answers,
+    ];
     arrayRisposte.sort(() => Math.random() - 0.5);
 
     // Pulisco la sezione risposte prima di creare i bottoni
@@ -192,10 +207,12 @@ window.onload = function () {
           console.log("Risposta esatta");
           totalCorrectAnswers += 1; // Se la risposta è corretta +1 correct answers
           risposteUtente.risposteCorrette += 1;
+          btnRisposta.style.backgroundColor = "green";
         } else {
           console.log("Risposta errata");
           totalWrongAnswers += 1; // Se la risposta è sbagliata +1 wrong answers
           risposteUtente.risposteSbagliate += 1;
+          btnRisposta.style.backgroundColor = "red";
         }
         console.log("risposte corrette= ", risposteUtente.risposteCorrette);
         console.log("risposte sbagliate= ", risposteUtente.risposteSbagliate);
