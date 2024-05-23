@@ -202,7 +202,7 @@ window.onload = function () {
       numeroDomanda.innerText = index + 1;
 
       // Aggiungo event listener click ai bottoni
-      btnRisposta.addEventListener("click", () => {
+      btnRisposta.addEventListener("click", (event) => {
         if (btnRisposta.innerText === questions[index].correct_answer) {
           console.log("Risposta esatta");
           totalCorrectAnswers += 1; // Se la risposta è corretta +1 correct answers
@@ -214,6 +214,7 @@ window.onload = function () {
           risposteUtente.risposteSbagliate += 1;
           btnRisposta.style.backgroundColor = "red";
         }
+
         console.log("risposte corrette= ", risposteUtente.risposteCorrette);
         console.log("risposte sbagliate= ", risposteUtente.risposteSbagliate);
 

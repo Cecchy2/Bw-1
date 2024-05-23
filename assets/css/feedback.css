@@ -64,6 +64,7 @@ p {
 }
 button:hover{
     cursor: pointer;
+    color: #9a1884;
     
 }
 a{
