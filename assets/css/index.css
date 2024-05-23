@@ -108,18 +108,18 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background-color: transparent;
+  background-color: white;
   
 }
 
 input[type="checkbox"]:checked::after {
-  content: "";
+  content: " ";
   position: absolute;
-  left: 5px;
-  top: 2px;
-  width: 6px;
+  left: 1px;
+  bottom: 3px;
+  width: 8px;
   height: 10px;
-  border: solid rgb(37, 209, 37);
-  border-width: 0 2px 2px 0;
+  border: solid rgb(3, 194, 3);
+  border-width: 0 5px 5px 0;
   transform: rotate(45deg);
 }
