@@ -1,3 +1,5 @@
+const howManyQuestions = sessionStorage.getItem("numQuestions"); // numero di domande selezionato
+console.log("domande scelte: ", howManyQuestions);
 let currentQuestionIndex = 0; // contatore domande
 let progressoCerchio = document.querySelector(".progresso");
 let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
@@ -153,7 +155,14 @@ window.onload = function () {
       correct_answer: "Motherboard",
       incorrect_answers: ["Central Processing Unit", "Hard Disk Drive", "Random Access Memory"],
     },
-    { type: "multiple", difficulty: "easy", category: "Science: Computers", question: "How long is an IPv6 address?", correct_answer: "128 bits", incorrect_answers: ["32 bits", "64 bits", "128 bytes"] },
+    {
+      type: "multiple",
+      difficulty: "easy",
+      category: "Science: Computers",
+      question: "How long is an IPv6 address?",
+      correct_answer: "128 bits",
+      incorrect_answers: ["32 bits", "64 bits", "128 bytes"],
+    },
     {
       category: "Science: Computers",
       type: "multiple",
@@ -162,7 +171,14 @@ window.onload = function () {
       correct_answer: "Captures what's on the screen and copies it to your clipboard",
       incorrect_answers: ["Nothing", "Saves a .png file of what's on the screen in your screenshots folder in photos", "Closes all windows"],
     },
-    { type: "multiple", difficulty: "easy", category: "Science: Computers", question: "When Gmail first launched, how much storage did it provide for your email?", correct_answer: "1GB", incorrect_answers: ["512MB", "5GB", "Unlimited"] },
+    {
+      type: "multiple",
+      difficulty: "easy",
+      category: "Science: Computers",
+      question: "When Gmail first launched, how much storage did it provide for your email?",
+      correct_answer: "1GB",
+      incorrect_answers: ["512MB", "5GB", "Unlimited"],
+    },
     {
       category: "Science: Computers",
       type: "multiple",
@@ -171,9 +187,30 @@ window.onload = function () {
       correct_answer: "Objective-C",
       incorrect_answers: ["C#", "Ruby", "C++"],
     },
-    { type: "boolean", difficulty: "easy", category: "Science: Computers", question: "'HTML' stands for Hypertext Markup Language.", correct_answer: "True", incorrect_answers: ["False"] },
-    { type: "multiple", difficulty: "easy", category: "Science: Computers", question: "According to the International System of Units, how many bytes are in a kilobyte of RAM?", correct_answer: "1000", incorrect_answers: ["512", "1024", "500"] },
-    { type: "multiple", difficulty: "easy", category: "Science: Computers", question: "What does the 'MP' stand for in MP3?", correct_answer: "Moving Picture", incorrect_answers: ["Music Player", "Multi Pass", "Micro Point"] },
+    {
+      type: "boolean",
+      difficulty: "easy",
+      category: "Science: Computers",
+      question: "'HTML' stands for Hypertext Markup Language.",
+      correct_answer: "True",
+      incorrect_answers: ["False"],
+    },
+    {
+      type: "multiple",
+      difficulty: "easy",
+      category: "Science: Computers",
+      question: "According to the International System of Units, how many bytes are in a kilobyte of RAM?",
+      correct_answer: "1000",
+      incorrect_answers: ["512", "1024", "500"],
+    },
+    {
+      type: "multiple",
+      difficulty: "easy",
+      category: "Science: Computers",
+      question: "What does the 'MP' stand for in MP3?",
+      correct_answer: "Moving Picture",
+      incorrect_answers: ["Music Player", "Multi Pass", "Micro Point"],
+    },
     {
       category: "Science: Computers",
       type: "multiple",
@@ -182,14 +219,31 @@ window.onload = function () {
       correct_answer: "Apple",
       incorrect_answers: ["Microsoft", "Atari", "Commodore"],
     },
-    { type: "boolean", difficulty: "easy", category: "Science: Computers", question: "Time on Computers is measured via the EPOX System.", correct_answer: "False", incorrect_answers: ["True"] },
+    {
+      type: "boolean",
+      difficulty: "easy",
+      category: "Science: Computers",
+      question: "Time on Computers is measured via the EPOX System.",
+      correct_answer: "False",
+      incorrect_answers: ["True"],
+    },
   ];
 
   const textQuestion = document.getElementById("domanda");
   const sezioneRisposte = document.getElementById("risposte");
 
+  // creo una funzione per mettere le domande in ordine randomico
+  function shuffleQuestions(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  shuffleQuestions(questions);
+
   function mostraDomanda(index) {
-    if (index >= questions.length) {
+    if (index >= howManyQuestions) {
       getReuslt();
       return;
     }
@@ -216,7 +270,7 @@ window.onload = function () {
       numeroDomanda.innerText = index + 1;
 
       // Aggiungo event listener click ai bottoni
-      btnRisposta.addEventListener("click", (event) => {
+      btnRisposta.addEventListener("click", () => {
         if (btnRisposta.innerText === questions[index].correct_answer) {
           console.log("Risposta esatta");
           totalCorrectAnswers += 1; // Se la risposta è corretta +1 correct answers
@@ -228,7 +282,6 @@ window.onload = function () {
           risposteUtente.risposteSbagliate += 1;
           btnRisposta.style.backgroundColor = "red";
         }
-
         console.log("risposte corrette= ", risposteUtente.risposteCorrette);
         console.log("risposte sbagliate= ", risposteUtente.risposteSbagliate);
 
@@ -243,15 +296,15 @@ window.onload = function () {
   }
 
   const getReuslt = () => {
-    localStorage.setItem("risposteCorrette", risposteUtente.risposteCorrette);
-    localStorage.setItem("risposteSbagliate", risposteUtente.risposteSbagliate);
+    sessionStorage.setItem("risposteCorrette", risposteUtente.risposteCorrette);
+    sessionStorage.setItem("risposteSbagliate", risposteUtente.risposteSbagliate);
     window.location.href = "resultPage.html";
   };
 
   // Mostra la prima domanda
   mostraDomanda(currentQuestionIndex);
   const totalQuestions = document.getElementById("totalQuestions");
-  totalQuestions.innerHTML = `/ ${questions.length}`;
+  totalQuestions.innerHTML = `/ ${howManyQuestions}`;
 };
 
 /* const totalQuestionNumber = document.querySelectorAll(".totalNumberQuestions");

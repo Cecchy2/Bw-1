@@ -1,57 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/css/index.css" />
-    <title>Welcome Page</title>
-  </head>
 
-  <body>
-    <header>
-      <img
-        id="epicodeLogo"
-        src="./assets/imgs/epicode_logo.png"
-        alt="logo epicode"
-        class="epicodeLogo"
-      />
-    </header>
-    <main>
-      <section id="titolo">
-        <h1>Welcome to <span>your exam</span></h1>
-      </section>
-      <h2>Instructions</h2>
-      <p>
-        We don't expect most engineers to know the answers to all of these
-        questions, so don't worry if you're unsure of a few of them.
-      </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/index.css" />
+  <title>Welcome Page</title>
+</head>
 
-      <ul>
-        <li>
-          Each question is <span>timed</span> and can only be
-          <span> answered once</span>.
-        </li>
-        <li>
-          Changing broswer tab or opening other windows will
-          <span>invalidate the question</span>.
-        </li>
-        <li>This exam will take approx. <span>0-5 minutes</span>.</li>
-      </ul>
-    </main>
-    <form id="form">
-      <input type="checkbox" id="checkbox" required />
-      <label for="checkbox"
-        >I promise to answer myself without help from anyone</label
-      >
+<body>
+  <header>
+    <img id="epicodeLogo" src="./assets/imgs/epicode_logo.png" alt="logo epicode"
+      class="epicodeLogo" />
+  </header>
+  <main>
+    <section id="titolo">
+      <h1>Welcome to <span>your exam</span></h1>
+    </section>
+    <h2>Instructions</h2>
+    <p>
+      We don't expect most engineers to know the answers to all of these
+      questions, so don't worry if you're unsure of a few of them.
+    </p>
 
-      <button id="proceedButton">PROCEED</button>
-    </form>
-    <script src="/assets/JavaScript/index.js"></script>
-  </body>
+    <ul>
+      <li>
+        Each question is <span>timed</span> and can only be <span> answered once</span>.
+      </li>
+      <li>
+        Changing broswer tab or opening other windows will
+        <span>invalidate the question</span>.
+      </li>
+      <li>This exam will take approx. <span>0-5 minutes</span>.</li>
+    </ul>
+  </main>
+  <form id="form">
+    <div>
+      <label for="difficulty">Difficulty</label>
+      <select name="difficulty" id="diffic">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+    <div>
+      <label for="questionNumber">Number of questions</label>
+      <select name="questionNumber" id="numQuestions">
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+    <input type="checkbox" id="checkbox" required />
+    <label for="checkbox">I promise to answer myself without help from anyone</label>
+    <button id="proceedButton">PROCEED</button>
+  </form>
+  <script src="/assets/JavaScript/index.js"></script>
+</body>
+
 </html>
