@@ -33,9 +33,9 @@ h1 {
     height: auto;
     width: 70%;
     margin-left: auto;
-    margin-right: auto;
-    
+    margin-right: auto;    
 }
+
 span{
     font-weight: bold;
 }
@@ -101,16 +101,18 @@ margin-left: 40em;
     margin-top: 3em;
     padding: 0;
     font-family: "Outfit", sans-serif;
-    font-weight: 300;
-    font-size: 1.6em;
+    font-weight: 400;
+    font-size: 1.2em;
 }
 
-/* #timerContainer{
-    position: absolute;
+#timer{
+    position: relative;
     margin: 0 auto;
-    bottom:154px;
-    left: 105px;
-} */
+    left: 150px;
+    bottom: 90px;
+    height: 190px;
+   
+}
 #timerNumerico {
     fill: white;
 }
