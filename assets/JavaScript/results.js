@@ -1,4 +1,4 @@
-const questions = [
+/* const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -117,11 +117,12 @@ const questions = [
     incorrect_answers: ["Microsoft", "Atari", "Commodore"],
   },
   { type: "boolean", difficulty: "easy", category: "Science: Computers", question: "Time on Computers is measured via the EPOX System.", correct_answer: "False", incorrect_answers: ["True"] },
-];
+]; */
 
 // mi riprendo risposteCorrette e risposteSbagliate dalla memoria del browser
-const risposteCorrette = localStorage.getItem("risposteCorrette");
-const risposteSbagliate = localStorage.getItem("risposteSbagliate");
+const numQuestions = sessionStorage.getItem("numQuestions");
+const risposteCorrette = sessionStorage.getItem("risposteCorrette");
+const risposteSbagliate = sessionStorage.getItem("risposteSbagliate");
 
 const correctAnswersNumber = document.getElementById("correctAnswersNumber");
 const wrongAnswersNumber = document.getElementById("wrongAnswersNumber");
@@ -131,13 +132,13 @@ const totalQuestionNumber = document.getElementsByClassName("totalQuestionNumber
 
 for (let i = 0; i < totalQuestionNumber.length; i++) {
   const element = totalQuestionNumber[i];
-  element.innerText = questions.length;
+  element.innerText = numQuestions;
 }
 
 correctAnswersNumber.innerText = risposteCorrette;
 wrongAnswersNumber.innerText = risposteSbagliate;
-const percentualeRisposteEsatteNumero = (risposteCorrette * 100) / questions.length;
-const percentualeRisposteSbagliateNumero = (risposteSbagliate * 100) / questions.length;
+const percentualeRisposteEsatteNumero = Math.round((((risposteCorrette * 100) / numQuestions) * 100) / 100);
+const percentualeRisposteSbagliateNumero = Math.round((((risposteSbagliate * 100) / numQuestions) * 100) / 100);
 
 const remainingPercentageCorrectNumero = 100 - percentualeRisposteEsatteNumero;
 const remainingPercentageWrongNumero = 100 - percentualeRisposteSbagliateNumero;
@@ -165,5 +166,5 @@ if (risposteSbagliate > 5) {
 
 const rateUsButton = document.getElementById("rateUsButton");
 rateUsButton.addEventListener("click", (event) => {
-  location.href = "Feedback.html";
+  window.location.href = "Feedback.html";
 });
