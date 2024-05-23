@@ -21,8 +21,7 @@ window.onload = function () {
 
   /* avanzamento del "progresso cerchio" */
   function avanzamento(percent) {
-    progressoCerchio.style.strokeDashoffset =
-      circonferenza - (percent / 100) * circonferenza;
+    progressoCerchio.style.strokeDashoffset = circonferenza - (percent / 100) * circonferenza;
 
     //  tempo rimanente in secondi
     let tempoRimanenteSecondi = Math.ceil(((percent / 100) * duration) / 1000);
@@ -72,18 +71,13 @@ window.onload = function () {
       difficulty: "easy",
       question: "What does CPU stand for?",
       correct_answer: "Central Processing Unit",
-      incorrect_answers: [
-        "Central Process Unit",
-        "Computer Personal Unit",
-        "Central Processor Unit",
-      ],
+      incorrect_answers: ["Central Process Unit", "Computer Personal Unit", "Central Processor Unit"],
     },
     {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question:
-        "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+      question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
       correct_answer: "Final",
       incorrect_answers: ["Static", "Private", "Public"],
     },
@@ -99,8 +93,7 @@ window.onload = function () {
       category: "Science: Computers",
       type: "boolean",
       difficulty: "easy",
-      question:
-        "Pointers were not used in the original C programming language; they were added later on in C++.",
+      question: "Pointers were not used in the original C programming language; they were added later on in C++.",
       correct_answer: "False",
       incorrect_answers: ["True"],
     },
@@ -108,8 +101,7 @@ window.onload = function () {
       category: "Science: Computers",
       type: "multiple",
       difficulty: "easy",
-      question:
-        "What is the most preferred image format used for logos in the Wikimedia database?",
+      question: "What is the most preferred image format used for logos in the Wikimedia database?",
       correct_answer: ".svg",
       incorrect_answers: [".png", ".jpeg", ".gif"],
     },
@@ -119,11 +111,7 @@ window.onload = function () {
       difficulty: "easy",
       question: "In web design, what does CSS stand for?",
       correct_answer: "Cascading Style Sheet",
-      incorrect_answers: [
-        "Counter Strike: Source",
-        "Corrective Style Sheet",
-        "Computer Style Sheet",
-      ],
+      incorrect_answers: ["Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"],
     },
     {
       category: "Science: Computers",
@@ -157,19 +145,48 @@ window.onload = function () {
       correct_answer: "Java",
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
+    {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question: "Which computer hardware device provides an interface for all other connected devices to communicate?",
+      correct_answer: "Motherboard",
+      incorrect_answers: ["Central Processing Unit", "Hard Disk Drive", "Random Access Memory"],
+    },
+    { type: "multiple", difficulty: "easy", category: "Science: Computers", question: "How long is an IPv6 address?", correct_answer: "128 bits", incorrect_answers: ["32 bits", "64 bits", "128 bytes"] },
+    {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question: "What does the Prt Sc button do?",
+      correct_answer: "Captures what's on the screen and copies it to your clipboard",
+      incorrect_answers: ["Nothing", "Saves a .png file of what's on the screen in your screenshots folder in photos", "Closes all windows"],
+    },
+    { type: "multiple", difficulty: "easy", category: "Science: Computers", question: "When Gmail first launched, how much storage did it provide for your email?", correct_answer: "1GB", incorrect_answers: ["512MB", "5GB", "Unlimited"] },
+    {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question: "The programming language 'Swift' was created to replace what other programming language?",
+      correct_answer: "Objective-C",
+      incorrect_answers: ["C#", "Ruby", "C++"],
+    },
+    { type: "boolean", difficulty: "easy", category: "Science: Computers", question: "'HTML' stands for Hypertext Markup Language.", correct_answer: "True", incorrect_answers: ["False"] },
+    { type: "multiple", difficulty: "easy", category: "Science: Computers", question: "According to the International System of Units, how many bytes are in a kilobyte of RAM?", correct_answer: "1000", incorrect_answers: ["512", "1024", "500"] },
+    { type: "multiple", difficulty: "easy", category: "Science: Computers", question: "What does the 'MP' stand for in MP3?", correct_answer: "Moving Picture", incorrect_answers: ["Music Player", "Multi Pass", "Micro Point"] },
+    {
+      category: "Science: Computers",
+      type: "multiple",
+      difficulty: "easy",
+      question: "Which company was established on April 1st, 1976 by Steve Jobs, Steve Wozniak and Ronald Wayne?",
+      correct_answer: "Apple",
+      incorrect_answers: ["Microsoft", "Atari", "Commodore"],
+    },
+    { type: "boolean", difficulty: "easy", category: "Science: Computers", question: "Time on Computers is measured via the EPOX System.", correct_answer: "False", incorrect_answers: ["True"] },
   ];
 
   const textQuestion = document.getElementById("domanda");
   const sezioneRisposte = document.getElementById("risposte");
-
-  /* const risposteUtente = {
-    risposteCorrette: 0,
-    risposteSbagliate: 0,
-  };
-
-  let totalCorrectAnswers = 0; // contatore risposte corrette
-  let totalWrongAnswers = 0; // contatore risposte sbagliate */
-  //   let currentQuestionIndex = 0; // contatore domande
 
   function mostraDomanda(index) {
     if (index >= questions.length) {
@@ -183,10 +200,7 @@ window.onload = function () {
     textQuestion.innerText = questions[index].question;
 
     // Creo un array con tutte le risposte di una domanda
-    const arrayRisposte = [
-      questions[index].correct_answer,
-      ...questions[index].incorrect_answers,
-    ];
+    const arrayRisposte = [questions[index].correct_answer, ...questions[index].incorrect_answers];
     arrayRisposte.sort(() => Math.random() - 0.5);
 
     // Pulisco la sezione risposte prima di creare i bottoni
@@ -235,9 +249,11 @@ window.onload = function () {
 
   // Mostra la prima domanda
   mostraDomanda(currentQuestionIndex);
+  const totalQuestions = document.getElementById("totalQuestions");
+  totalQuestions.innerHTML = `/ ${questions.length}`;
 };
 
-const totalQuestionNumber = document.querySelectorAll(".totalNumberQuestions");
+/* const totalQuestionNumber = document.querySelectorAll(".totalNumberQuestions");
 totalQuestionNumber.forEach((currentElement) => {
   currentElement.innerText = questions.length;
-});
+}); */
