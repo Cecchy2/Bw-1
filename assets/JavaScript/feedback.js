@@ -42,7 +42,6 @@ button.addEventListener("click", (event) => {
   const messaggioSalvato = input.value + ", il voto lasciato è " + voto;
   console.log(messaggioSalvato);
   input.value = " ";
-  window.alert("il messaggio è stato inviato");
 
   localStorage.setItem("voto", voto);
   location.href = "ringraziamenti.html";
