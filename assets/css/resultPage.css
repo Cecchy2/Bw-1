@@ -35,8 +35,18 @@ main{
 }
 .blocchi{
     display: inline-block;
-    margin: 4%;
     
+    
+}
+#correct{
+    position: relative;
+    bottom: 140px;
+    right: 50px;
+}
+#wrong{
+    position: relative;
+    bottom: 140px;
+    left: 50px;
 }
 
 footer{
