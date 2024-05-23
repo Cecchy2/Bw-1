@@ -112,6 +112,10 @@ input[type="checkbox"]:checked {
   
 }
 
+nput[type="checkbox"]:hover{
+  cursor: pointer;
+}
+
 input[type="checkbox"]:checked::after {
   content: " ";
   position: absolute;
