@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="assets/css/ringraziamenti.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ringraziamenti</title>
+  </head>
+  <body>
+    <h1>
+      Grazie per averci lasciato il tuo voto!<br /><span id="votoDato"></span> stelle
+    </h1>
+
+    <script>
+      // Recupera il voto da localStorage
+      const voto = localStorage.getItem("voto");
+      const votoDato = document.getElementById("votoDato");
+      votoDato.innerText = voto;
+    </script>
+  </body>
+</html>

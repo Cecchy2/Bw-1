@@ -43,4 +43,9 @@ button.addEventListener("click", (event) => {
   console.log(messaggioSalvato);
   input.value = " ";
   window.alert("il messaggio è stato inviato");
+
+  localStorage.setItem("voto", voto);
+  location.href = "ringraziamenti.html";
 });
+
+console.log(voto);

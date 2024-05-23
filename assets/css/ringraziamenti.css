@@ -1,0 +1,15 @@
+body {
+    background-image: url(../imgs/bg.jpg);
+    background-size: cover;
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+    color: rgb(0, 255, 255);
+
+}
+
+#votoDato{
+    color: #9a1884;
+}
