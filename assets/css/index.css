@@ -53,18 +53,15 @@ h2 {
 }
 
 form {
-  margin-top: 7%;
-  margin-bottom: 100px;
+  margin-top: 4em;
 }
 
 label {
   margin-right: 17%;
-  font-size: 14px;
   font-weight: 500;
 }
 
 button {
-  margin-left: 85%;
   background-color: #00FFFF;
   border-color: #00FFFF;
   box-shadow: 2px 0px 16px 0px #00FFFF;
@@ -108,8 +105,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background-color: white;
-  
+  background-color: transparent; 
 }
 
 input[type="checkbox"]:hover{
@@ -119,11 +115,36 @@ input[type="checkbox"]:hover{
 input[type="checkbox"]:checked::after {
   content: " ";
   position: absolute;
-  left: 1px;
+  left: 4px;
   bottom: 3px;
-  width: 8px;
-  height: 10px;
-  border: solid rgb(3, 194, 3);
+  width: 3px;
+  height: 9px;
+  border: solid rgb(194, 21, 141);
   border-width: 0 5px 5px 0;
   transform: rotate(45deg);
+  background-color: transparent;
+}
+
+select {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 35px;
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 16px;
+}
+
+select:hover {
+  background: rgb(144,0,128);
+  background: linear-gradient(207deg, rgba(144,0,128,1) 0%, rgba(210,0,148,1) 100%);
+}
+
+#diffic {
+  margin-left: 65px;
+}
+
+#checkboxContainer {
+  margin-top: 3em;
+  display: inline;
 }
