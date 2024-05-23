@@ -85,6 +85,9 @@ a:visited {
 span{
   font-weight: 700;
 }
+#proceedButton{
+  position: absolute;
+}
 
 
 button:hover{
