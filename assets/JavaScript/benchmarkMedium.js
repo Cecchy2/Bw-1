@@ -310,6 +310,11 @@ window.onload = function () {
       const numeroDomanda = document.getElementById("currentQuestionNumber");
       numeroDomanda.innerText = index + 1;
 
+      // identifico il bottone con la risposta esatta per poi colorarlo di verde
+      if (currentAnswer === questions[index].correct_answer) {
+        correctAnswerButton = btnRisposta;
+      }
+
       // Aggiungo event listener click ai bottoni
       btnRisposta.addEventListener("click", () => {
         if (btnRisposta.innerText === questions[index].correct_answer) {
@@ -322,6 +327,7 @@ window.onload = function () {
           totalWrongAnswers += 1; // Se la risposta è sbagliata +1 wrong answers
           risposteUtente.risposteSbagliate += 1;
           btnRisposta.style.backgroundColor = "red";
+          correctAnswerButton.style.backgroundColor = "green";
         }
         console.log("risposte corrette= ", risposteUtente.risposteCorrette);
         console.log("risposte sbagliate= ", risposteUtente.risposteSbagliate);

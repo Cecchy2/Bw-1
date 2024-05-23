@@ -60,7 +60,6 @@ main,footer{
 }
 .button:hover {
     background: rgb(144,0,128);
-    background: linear-gradient(207deg, rgba(144,0,128,1) 0%, rgba(210,0,148,1) 100%);
 }
 
 #questionCounter h1{
