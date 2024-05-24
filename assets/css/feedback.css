@@ -79,3 +79,11 @@ a{
     color: white;
 }
 
+.feedbackMessage {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 22vh;
+    font-size: 45px;
+}

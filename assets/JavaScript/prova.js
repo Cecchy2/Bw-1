@@ -43,22 +43,27 @@ button.addEventListener("click", (event) => {
   console.log(messaggioSalvato);
   input.value = " ";
 
+  const stelle = document.querySelectorAll(".stella path");
+  let votoAttuale = 0;
+  stelle.forEach((stella, index) => {
+    if (stella.style.fill === "rgb(0, 255, 255)") {
+      votoAttuale = index + 1;
+    }
+  });
+
   const pageContainer = document.getElementById("pageContainer");
   pageContainer.innerText = "";
 
   const feedbackText = document.createElement("p");
-  feedbackText.classList.add("feedbackMessage");
-  if (voto > 8) {
-    feedbackText.innerHTML =
-      "Thanks for your feedback! <br> We'll continously improve our services and we will keep up with your future expectations <br> &#128515; &#128640;";
-  } else if (voto <= 8 && voto > 6) {
-    feedbackText.innerHTML =
-      "Thanks for your feedback! <br> We appreciate your opinion and we will rely on it to improve and provide you with a better experience in the future <br> &#128515; &#128640;";
-  } else {
-    feedbackText.innerHTML =
-      "Thanks for your feedback! <br> We are sorry we couldn't meet your expectations <br> We appreciate your opinion and we will rely on it to improve and provide you with a better experience in the future <br> &#128532;";
+  if (votoAttuale <= 8) {
+    feedbackText.innerText =
+      "Thanks for your feedback! We'll make sure to keep improving our services and we hope we will be able to keep up with your future expectations 	&#128515;";
+    "Grazie per aver condiviso la tua opinione con noi! Apprezziamo il tuo feedback di " +
+      votoAttuale +
+      " stelle lo utilizzeremo per migliorare ulteriormente i nostri servizi. Speriamo di poter soddisfare ancora meglio le tue aspettative in futuro.";
+  } else if (votoAttuale <= 6) {
+    feedbackText.innerText =
+      "Thanks for your feedback! We are sorry we couldn't meet your expactations 😔 We appreciate your opinion and we will rely on it to improve and provide you with a better experience in the future";
   }
   pageContainer.appendChild(feedbackText);
 });
-
-console.log(voto);
