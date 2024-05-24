@@ -2,7 +2,7 @@ const voto = localStorage.getItem("voto");
 const votoDato = document.getElementById("votoDato");
 votoDato.innerText = voto;
 
-if (voto <= 6 && voto > 4) {
+if (voto <= 7 && voto > 6) {
   const votoAlto = document.getElementById("votoAlto");
   votoAlto.classList.add("invisibile");
   const divVotoMedio = document.getElementById("votoMedio");
@@ -12,7 +12,7 @@ if (voto <= 6 && voto > 4) {
     voto +
     " stelle lo utilizzeremo per migliorare ulteriormente i nostri servizi. Speriamo di poter soddisfare ancora meglio le tue aspettative in futuro.";
   divVotoMedio.appendChild(testoMedio);
-} else if (voto <= 4) {
+} else if (voto <= 6) {
   const votoAlto = document.getElementById("votoAlto");
   votoAlto.classList.add("invisibile");
   const divVotoBasso = document.getElementById("votoBasso");
