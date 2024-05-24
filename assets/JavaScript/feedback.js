@@ -53,7 +53,7 @@ button.addEventListener("click", (event) => {
   feedbackText.classList.add("feedbackMessage");
   if (voto > 8) {
     feedbackText.innerHTML =
-      "Thanks for your feedback! <br> We'll continously improve our services and we will keep up with your future expectations <br> &#128515; &#128640;";
+      "Thanks for your feedback! <br> We'll continuosly improve our services and we will keep up with your future expectations <br> &#128515; &#128640;";
   } else if (voto <= 8 && voto > 6) {
     feedbackText.innerHTML =
       "Thanks for your feedback! <br> We appreciate your opinion and we will rely on it to improve and provide you with a better experience in the future <br> &#128515; &#128640;";
