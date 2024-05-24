@@ -9,6 +9,12 @@ body {
     color: rgb(0, 255, 255);
 
 }
+#epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
+    width: 150px;  
+    margin-top: 3em;
+    margin-left: 4em;
+  }
+  
 
 #votoDato{
     color: #9a1884;
