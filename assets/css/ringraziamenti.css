@@ -8,13 +8,13 @@ body {
     padding-top: 10%;
     color: rgb(0, 255, 255);
     height: 100vh;
+    margin: 0 15% 0 15%;
    
 
 }
 #epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
     width: 150px;  
-    margin-top: 3em;
-    margin-left: 4em;
+    margin-top: 4em;
   }
   
 
