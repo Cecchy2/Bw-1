@@ -13,3 +13,6 @@ body {
 #votoDato{
     color: #9a1884;
 }
+.invisibile{
+    display: none;
+}
