@@ -662,7 +662,7 @@ window.onload = function () {
     arrayRisposte.forEach((risposta) => {
       const button = document.createElement("button");
       button.innerText = risposta;
-      button.classList.add("risposta");
+      button.classList.add("btn");
       button.addEventListener("click", function () {
         clearInterval(intervallo);
         if (risposta === currentQuestion.correct_answer) {
@@ -677,11 +677,27 @@ window.onload = function () {
     });
 
     resetTimer(duration);
+
+    function checkAnswer(answer, correctAnswer) {
+      if (answer === correctAnswer) {
+        console.log("Risposta esatta");
+        risposteUtente.risposteCorrette += 1;
+        btnRisposta.style.backgroundColor = "green";
+      } else {
+        console.log("Risposta errata");
+        risposteUtente.risposteSbagliate += 1;
+        btnRisposta.style.backgroundColor = "red";
+        correctAnswerButton.style.backgroundColor = "green";
+      }
+      currentQuestionIndex += 1;
+      mostraDomanda(currentQuestionIndex);
+    }
   }
 
   function getResult() {
-    // Funzione per mostrare il risultato finale
-    alert(`Quiz terminato! Risposte corrette: ${risposteUtente.risposteCorrette}, Risposte sbagliate: ${risposteUtente.risposteSbagliate}`);
+    sessionStorage.setItem("risposteCorrette", risposteUtente.risposteCorrette);
+    sessionStorage.setItem("risposteSbagliate", risposteUtente.risposteSbagliate);
+    window.location.href = "resultPage.html";
   }
 
   mostraDomanda(currentQuestionIndex);

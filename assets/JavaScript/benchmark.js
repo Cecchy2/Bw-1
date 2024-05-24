@@ -664,16 +664,20 @@ window.onload = function () {
     // creo un array dove mettere le risposte alle domande
     const arrayRisposte = [];
 
+    const numeroDomanda = document.getElementById("currentQuestionNumber");
     let currentQuestion;
     switch (chosenDifficulty) {
       case "easy":
         currentQuestion = questionsEasy[index];
+        numeroDomanda.innerText = index + 1;
         break;
       case "medium":
         currentQuestion = questionsMedium[index];
+        numeroDomanda.innerText = index + 1;
         break;
       case "hard":
         currentQuestion = questionsHard[index];
+        numeroDomanda.innerText = index + 1;
         break;
     }
 
@@ -689,14 +693,24 @@ window.onload = function () {
     sezioneRisposte.innerHTML = "";
 
     // itero l'array con le risposte per generare tanti bottoni quante sono le risposte
-    arrayRisposte.forEach((currentAnswer) => {
-      const btnRisposta = document.createElement("button");
-      btnRisposta.innerText = currentAnswer;
-      btnRisposta.classList.add = "btn";
-      btnRisposta.addEventListener("click", (event) => {
-        checkAnswer(currentAnswer, currentQuestion.correct_answer);
+    arrayRisposte.forEach((risposta) => {
+      const button = document.createElement("button");
+      button.innerText = risposta;
+      button.classList.add("btn");
+
+      button.addEventListener("click", function () {
+        clearInterval(intervallo);
+        if (risposta === currentQuestion.correct_answer) {
+          risposteUtente.risposteCorrette += 1;
+          button.style.backgroundColor = "green";
+        } else {
+          risposteUtente.risposteSbagliate += 1;
+          button.style.backgroundColor = "red";
+        }
+        currentQuestionIndex += 1;
+        mostraDomanda(currentQuestionIndex);
       });
-      sezioneRisposte.appendChild(btnRisposta);
+      sezioneRisposte.appendChild(button);
     });
 
     resetTimer(duration);
@@ -705,11 +719,11 @@ window.onload = function () {
       if (answer === correctAnswer) {
         console.log("Risposta esatta");
         risposteUtente.risposteCorrette += 1;
-        btnRisposta.style.backgroundColor = "green";
+        button.style.backgroundColor = "green";
       } else {
         console.log("Risposta errata");
         risposteUtente.risposteSbagliate += 1;
-        btnRisposta.style.backgroundColor = "red";
+        button.style.backgroundColor = "red";
         correctAnswerButton.style.backgroundColor = "green";
       }
       currentQuestionIndex += 1;
