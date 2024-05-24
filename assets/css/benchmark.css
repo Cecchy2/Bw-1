@@ -50,7 +50,7 @@ main,footer{
     transition: all 0.3s;   
     margin: 1em; 
 }
-.btn:hover {
+.button:hover {
     background: rgb(144,0,128);
 }
 
