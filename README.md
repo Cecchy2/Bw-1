@@ -20,6 +20,13 @@ Le pagine che dovrete creare sono: <br>
   <li>Feedback page</li>
 </ul>
 
+**EXTRA:** <br>
+<ul>
+  <li>Dai un feedback sulla risposta al momento del click (corretta o sbagliata)</li>
+  <li>Visualizza una domanda alla volta in sequenza piuttosto che tutte assieme in forma di lista</li>
+  <li>Permetti all'utente di selezionare la difficoltà del quiz prima di iniziare e il numero di domande che desidera ricevere.</li>
+</ul>
+
 **ASSETS & SCREENS (da usare come mockup di riferimento)** <br>
 <a href="https://join.epicode.com/wp-content/uploads/2022/03/exam_01_welcome.png">Welcome Page</a> <br>
 <a href="https://join.epicode.com/wp-content/uploads/2022/03/exam_02_test.png">Benchmark Page</a> <br>
