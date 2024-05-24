@@ -46,7 +46,7 @@ main,footer{
     width: 75%;
     margin: auto;
 }
-.btn {
+.button {
     width: 370px;
     height: 5em;
     background-color: rgba(255, 255, 255, 0.076);

@@ -569,8 +569,8 @@ const questionsHard = [
   },
 ];
 
-const howManyQuestions = sessionStorage.getItem("numQuestions");
-const chosenDifficulty = sessionStorage.getItem("chosenDifficulty");
+const howManyQuestions = sessionStorage.getItem("numQuestions"); // numero di domande scelte
+const chosenDifficulty = sessionStorage.getItem("chosenDifficulty"); // difficolta scelta
 console.log(howManyQuestions);
 console.log(chosenDifficulty);
 let currentQuestionIndex = 0; // contatore domande
@@ -578,11 +578,9 @@ let progressoCerchio = document.querySelector(".progresso");
 let raggio = progressoCerchio.r.baseVal.value; /* calcolare il raggio del cerchio */
 let circonferenza = raggio * 2 * Math.PI;
 const risposteUtente = {
-  risposteCorrette: 0,
-  risposteSbagliate: 0,
+  risposteCorrette: 0, // contatore risposte corrette
+  risposteSbagliate: 0, // contatore risposte sbagliate
 };
-/* let totalCorrectAnswers = 0; // contatore risposte corrette
-let totalWrongAnswers = 0; // contatore risposte sbagliate */
 
 window.onload = function () {
   //let progressoCerchio = document.querySelector(".progresso");
@@ -643,7 +641,7 @@ window.onload = function () {
   const textQuestion = document.getElementById("domanda");
   const sezioneRisposte = document.getElementById("risposte");
 
-  // creo una funzione per mettere le domande in ordine randomico
+  // creo una funzione per ordinare in maniera casuale un array (per mischiare domande e risposte)
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -664,8 +662,10 @@ window.onload = function () {
     // creo un array dove mettere le risposte alle domande
     const arrayRisposte = [];
 
-    const numeroDomanda = document.getElementById("currentQuestionNumber");
+    const numeroDomanda = document.getElementById("currentQuestionNumber"); // riferimento al contatore di domande
     let currentQuestion;
+
+    // creo uno switch per selezionare l'array da cui prendere le domande a seconda della difficolta scelta
     switch (chosenDifficulty) {
       case "easy":
         currentQuestion = questionsEasy[index];
@@ -683,11 +683,11 @@ window.onload = function () {
 
     textQuestion.innerText = currentQuestion.question; // Cambio il testo della domanda
 
-    // Creo un array con tutte le risposte di una domanda e le mischio randomicamente
+    // pusho le risposte in arrayRisposte
     arrayRisposte.push(currentQuestion.correct_answer, ...currentQuestion.incorrect_answers);
-    /* arrayRisposte.sort(() => Math.random() - 0.5); */
+
+    // mischio randomicamente le risposte nell'array
     shuffleArray(arrayRisposte);
-    console.log(arrayRisposte);
 
     // Pulisco la sezione risposte prima di creare i bottoni
     sezioneRisposte.innerHTML = "";
@@ -696,8 +696,12 @@ window.onload = function () {
     arrayRisposte.forEach((risposta) => {
       const button = document.createElement("button");
       button.innerText = risposta;
-      button.classList.add("btn");
+      button.classList.add("button");
 
+      // aggiungo event listener ai bottoni
+      // al click
+      // se risposta corretta --> +1 contatore risposte corrette; bottone diventa verde
+      // se risposta sbagliata --> +1 contatore risposte sbagliate; bottone diventa rosso
       button.addEventListener("click", function () {
         clearInterval(intervallo);
         if (risposta === currentQuestion.correct_answer) {
@@ -707,57 +711,32 @@ window.onload = function () {
           risposteUtente.risposteSbagliate += 1;
           button.style.backgroundColor = "red";
         }
-        currentQuestionIndex += 1;
-        mostraDomanda(currentQuestionIndex);
+
+        // identifico il button con la risposta esatta --> creo variabile const correctButton
+        // --> creo un array selezionando tutti i children di sezioneRisposte (i bottoni con le risposte) --> Array.from(sezioneRisposte.children)
+        // --> uso il metodo find() per iterare tutte le risposte all'interno dell'array e mi ritorna il bottone il cui testo corrisponda alla risposta corretta
+        const correctButton = Array.from(sezioneRisposte.children).find(
+          (currentButton) => currentButton.innerText === currentQuestion.correct_answer
+        );
+
+        // if correctButton === true, lo sfondo diventa verde
+        if (correctButton) {
+          correctButton.style.backgroundColor = "green";
+        }
+
+        console.log("risposte corrette= ", risposteUtente.risposteCorrette);
+        console.log("risposte sbagliate= ", risposteUtente.risposteSbagliate);
+
+        // aggiungo un delay di 1 secondo alla pressione del tasto prima di caricare la prossima domanda
+        setTimeout(() => {
+          currentQuestionIndex += 1;
+          mostraDomanda(currentQuestionIndex);
+        }, 1000);
       });
       sezioneRisposte.appendChild(button);
     });
 
     resetTimer(duration);
-
-    function checkAnswer(answer, correctAnswer) {
-      if (answer === correctAnswer) {
-        console.log("Risposta esatta");
-        risposteUtente.risposteCorrette += 1;
-        button.style.backgroundColor = "green";
-      } else {
-        console.log("Risposta errata");
-        risposteUtente.risposteSbagliate += 1;
-        button.style.backgroundColor = "red";
-        correctAnswerButton.style.backgroundColor = "green";
-      }
-      currentQuestionIndex += 1;
-      mostraDomanda(currentQuestionIndex);
-    }
-
-    /* // identifico il bottone con la risposta esatta per poi colorarlo di verde
-    if (currentAnswer === questions[index].correct_answer) {
-      correctAnswerButton = btnRisposta;
-    }
-
-    // aggiungo eventListener ai bottoni
-    btnRisposta.addEventListener("click", (event) => {
-      if (btnRisposta.innerText === questionsEasy[index].correct_answer) {
-        console.log("Risposta esatta");
-        risposteUtente.risposteCorrette += 1;
-        btnRisposta.style.backgroundColor = "green";
-      } else {
-        console.log("Risposta errata");
-        risposteUtente.risposteSbagliate += 1;
-        btnRisposta.style.backgroundColor = "red";
-        correctAnswerButton.style.backgroundColor = "green";
-      }
-      console.log("risposte corrette= ", risposteUtente.risposteCorrette);
-      console.log("risposte sbagliate= ", risposteUtente.risposteSbagliate);
-
-      // Aggiungo un delay di 1 secondo prima di passare alla prossima domanda
-      setTimeout(() => {
-        mostraDomanda(index + 1);
-      }, 1000);
-    });
-    sezioneRisposte.appendChild(btnRisposta);
-
-    resetTimer(duration); // Resetta il timer ogni volta che mostri una nuova domanda */
   }
 
   const getReuslt = () => {
