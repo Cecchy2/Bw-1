@@ -4,6 +4,7 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   color: white;
+  height: 100vh;
 }
 
 #epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
