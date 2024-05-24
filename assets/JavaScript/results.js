@@ -1,4 +1,4 @@
-// mi riprendo risposteCorrette e risposteSbagliate dalla memoria del browser
+// mi riprendo risposteCorrette, risposteSbagliate e numero di domande dalla memoria del browser
 const numQuestions = sessionStorage.getItem("numQuestions");
 const risposteCorrette = sessionStorage.getItem("risposteCorrette");
 const risposteSbagliate = sessionStorage.getItem("risposteSbagliate");
@@ -11,37 +11,31 @@ const totalQuestionNumber = document.getElementsByClassName("totalQuestionNumber
 
 for (let i = 0; i < totalQuestionNumber.length; i++) {
   const element = totalQuestionNumber[i];
-  element.innerText = numQuestions;
+  element.innerText = numQuestions; // scrive il numero di domande totali
 }
 
 correctAnswersNumber.innerText = risposteCorrette;
 wrongAnswersNumber.innerText = risposteSbagliate;
+
+// calcolo della percentuale del voto
 const percentualeRisposteEsatteNumero = Math.round((((risposteCorrette * 100) / numQuestions) * 100) / 100);
 const percentualeRisposteSbagliateNumero = Math.round((((risposteSbagliate * 100) / numQuestions) * 100) / 100);
 
+// calcolo della percentuale residua per colorare il grafico
 const remainingPercentageCorrectNumero = 100 - percentualeRisposteEsatteNumero;
 const remainingPercentageWrongNumero = 100 - percentualeRisposteSbagliateNumero;
 
 correctAnswersPercentage.innerText = percentualeRisposteEsatteNumero + "%";
 wrongAnswersPercentage.innerText = percentualeRisposteSbagliateNumero + "%";
 
+// setto i valori di stroke-dasharray per colorare il grafico
 const wrongAnswersPercentageDonught = document.getElementById("wrongPercentage");
 const correctAnswersPercentageDonught = document.getElementById("correctPercentage");
-
 wrongAnswersPercentageDonught.setAttribute("stroke-dasharray", `${percentualeRisposteSbagliateNumero} ${remainingPercentageWrongNumero}`);
 correctAnswersPercentageDonught.setAttribute("stroke-dasharray", `${percentualeRisposteEsatteNumero} ${remainingPercentageCorrectNumero}`);
 
 console.log(percentualeRisposteSbagliateNumero, remainingPercentageWrongNumero);
 console.log(percentualeRisposteEsatteNumero, remainingPercentageCorrectNumero);
-
-/* if (risposteSbagliate > 5) {
-  const congrat = document.getElementById("congrat");
-  congrat.value = " ";
-  const h3 = document.getElementById("h3");
-  const paragrafo = document.getElementById("paragrafo");
-  h3.innerText = "MI DISPIACE";
-  paragrafo.innerText = "NON SEI PASSATO!";
-} */
 
 const rateUsButton = document.getElementById("rateUsButton");
 rateUsButton.addEventListener("click", (event) => {
@@ -50,6 +44,7 @@ rateUsButton.addEventListener("click", (event) => {
 
 const chartResult = document.getElementById("chartResultTest");
 
+// genero il testo all'interno del grafico a seconda del punteggio ottenuto
 if (percentualeRisposteEsatteNumero >= 60) {
   chartResult.innerHTML = `
   <tspan font-size="2px" dy="0em" x="-6%">Congratulations!</tspan>

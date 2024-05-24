@@ -18,13 +18,6 @@ header{
     margin-left: 4em; 
 }  
 
-/* #timer{
-    width: 40%;
-    position: relative;
-    left: 70%;
-    bottom: 100px
-} */
-
 h1 {
     font-family: "Outfit", sans-serif;
     font-size: 50px;
@@ -61,16 +54,10 @@ main,footer{
     background: rgb(144,0,128);
 }
 
-#questionCounter h1{
-    font-size: 20px;
-    padding-top: 5em;
-    padding-bottom: 3em;
-}
 #totalQuestions{
     color: rgb(144,0,128);
     color: linear-gradient(207deg, rgba(144,0,128,1) 0%, rgba(210,0,148,1) 100%);
 }
-
 
 .traccia{
     stroke: lightgray;
@@ -110,8 +97,7 @@ margin-left: 40em;
     margin: 0 auto;
     left: 150px;
     bottom: 90px;
-    height: 190px;
-   
+    height: 190px;  
 }
 #timerNumerico {
     fill: white;

@@ -97,12 +97,12 @@ a{
 }
 
 
-.donut{
-  top: 21%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  rotate: -306deg;
+.donut {
+    top: 21%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    rotate: -306deg;
 }
 
 
@@ -111,7 +111,7 @@ a{
     fill: white;
     /* text-anchor: middle; */
     
-  }
+}
 
 text {
     rotate: -54deg;
