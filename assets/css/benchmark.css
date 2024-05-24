@@ -49,16 +49,15 @@ main,footer{
 .button {
     width: 370px;
     height: 5em;
-  background-color: rgba(255, 255, 255, 0.076);
-  border-radius: 50px 50px 50px 50px; 
-  box-shadow:  -1px -2px 3px -3px #FFFFFF;
-  cursor: pointer;
-  color: white;
-  transition: all 0.3s;   
-  margin: 1em; 
-  
+    background-color: rgba(255, 255, 255, 0.076);
+    border-radius: 50px 50px 50px 50px; 
+    box-shadow:  -1px -2px 3px -3px #FFFFFF;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s;   
+    margin: 1em; 
 }
-.button:hover {
+.btn:hover {
     background: rgb(144,0,128);
 }
 

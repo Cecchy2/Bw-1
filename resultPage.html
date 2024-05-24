@@ -1,97 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/resultPage.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/resultPage.css" />
-    <title>resultPage</title>
-  </head>
 
-  <body>
-    <header>
-      <img src="/assets/imgs/epicode_logo.png" alt="logo epicode" id="epicodeLogo" />
-    </header>
-    <section id="titolo">
-      <h1>Results</h1>
-      <h2>The summary of your answers:</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/resultPage.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/resultPage.css" />
+  <title>resultPage</title>
+</head>
+
+<body>
+  <header>
+    <img src="/assets/imgs/epicode_logo.png" alt="logo epicode" id="epicodeLogo" />
+  </header>
+  <section id="titolo">
+    <h1>Results</h1>
+    <h2>The summary of your answers:</h2>
+  </section>
+  <main>
+    <section class="blocchi" id="correct">
+      <p>Correct</p>
+      <p id="correctAnswersPercentage"></p>
+      <h3>
+        <span id="correctAnswersNumber"></span>/<span class="totalQuestionNumber"></span>
+        questions
+      </h3>
     </section>
-    <main>
-      <section class="blocchi" id="correct">
-        <p>Correct</p>
-        <p id="correctAnswersPercentage"></p>
-        <h3>
-          <span id="correctAnswersNumber"></span>/<span
-            class="totalQuestionNumber"
-          ></span>
-          questions
-        </h3>
-      </section>
-      <section class="blocchi" id="torta">
-        <div class="donut-container">
-          <svg width="390px" height="60%" viewBox="0 0 42 42" class="donut">
-            <circle
-              class="donut-hole"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="transparent"
-            ></circle>
-            <circle
-              class="donut-ring"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="transparent"
-              stroke="rgb(210, 0, 148)"
-              stroke-width="4"
-            ></circle>
-            <circle
-              id="wrongPercentage"
-              class="donut-segment"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="transparent"
-              stroke="rgb(210, 0, 148)"
-              stroke-width="4"
-              stroke-dasharray="85 15"
-              stroke-dashoffset="25"
-            ></circle>
-            <circle
-              id="correctPercentage"
-              class="donut-segment"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="transparent"
-              stroke="rgb(0, 255, 255)"
-              stroke-width="4"
-              stroke-dasharray=""
-              stroke-dashoffset="40"
-            ></circle>
-            <text id="chartResultTest" x="50%" y="50%" text-anchor="middle"></text>
-          </svg>
-        </div>
-      </section>
-      <section class="blocchi" id="wrong">
-        <p>Wrong</p>
-        <p id="wrongAnswersPercentage"></p>
-        <h3>
-          <span id="wrongAnswersNumber"></span>/<span class="totalQuestionNumber"></span>
-          questions
-        </h3>
-      </section>
-    </main>
-    <footer>
-      <button id="rateUsButton">RATE US</button>
-    </footer>
-    <script src="./assets/JavaScript/results.js"></script>
-  </body>
+    <section class="blocchi" id="torta">
+      <div class="donut-container">
+        <svg width="390px" height="60%" viewBox="0 0 42 42" class="donut">
+          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="transparent">
+          </circle>
+          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent"
+            stroke="rgb(210, 0, 148)" stroke-width="4"></circle>
+          <circle id="wrongPercentage" class="donut-segment" cx="21" cy="21" r="15.91549430918954"
+            fill="transparent" stroke="rgb(210, 0, 148)" stroke-width="4" stroke-dasharray="85 15"
+            stroke-dashoffset="25"></circle>
+          <circle id="correctPercentage" class="donut-segment" cx="21" cy="21" r="15.91549430918954"
+            fill="transparent" stroke="rgb(0, 255, 255)" stroke-width="4" stroke-dasharray=""
+            stroke-dashoffset="40"></circle>
+          <text id="chartResultTest" x="50%" y="50%" text-anchor="middle"></text>
+        </svg>
+      </div>
+    </section>
+    <section class="blocchi" id="wrong">
+      <p>Wrong</p>
+      <p id="wrongAnswersPercentage"></p>
+      <h3>
+        <span id="wrongAnswersNumber"></span>/<span class="totalQuestionNumber"></span>
+        questions
+      </h3>
+    </section>
+  </main>
+  <footer>
+    <button id="rateUsButton">RATE US</button>
+  </footer>
+  <script src="./assets/JavaScript/results.js"></script>
+</body>
+
 </html>
