@@ -1,0 +1,156 @@
+body {
+  background-image: url("../imgs/bg.jpg");
+  background-size: cover;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: white;
+  height: 100vh;
+}
+
+#epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
+  width: 150px;  
+  margin-top: 3em;
+  margin-left: 4em;
+}
+
+#titolo {
+  width:400px ;
+  margin-top: 9%;
+  margin-bottom: 2%;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 4.5em;
+  font-weight: 400;
+  margin: 0;
+  
+}
+
+main, form {
+  width: 60%;
+  margin: auto;
+}
+main p {
+  width: 480px;
+  margin-bottom: 3em;
+  margin-top: 5px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+li {
+  padding-top: 1%;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+
+
+h2 {
+  color: rgb(194, 21, 141);
+  margin-bottom: 0;
+  
+}
+
+form {
+  margin-top: 4em;
+}
+
+label {
+  margin-right: 17%;
+  font-weight: 500;
+}
+
+button {
+  background-color: #00FFFF;
+  border-color: #00FFFF;
+  box-shadow: 2px 0px 16px 0px #00FFFF;
+  height: 60px;
+  width: 200px;
+  border-style: none;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+span{
+  font-weight: 700;
+}
+#proceedButton{
+  position: absolute;
+  bottom: 14vh;
+  
+}
+
+
+button:hover{
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+  background-color: transparent; 
+}
+
+input[type="checkbox"]:hover{
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked::after {
+  content: " ";
+  position: absolute;
+  left: 4px;
+  bottom: 3px;
+  width: 3px;
+  height: 9px;
+  border: solid rgb(194, 21, 141);
+  border-width: 0 5px 5px 0;
+  transform: rotate(45deg);
+  background-color: transparent;
+}
+
+select {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 35px;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 16px;
+}
+
+select:hover {
+  background: rgb(144,0,128);
+  background: linear-gradient(207deg, rgba(144,0,128,1) 0%, rgba(210,0,148,1) 100%);
+}
+
+#diffic {
+  margin-left: 65px;
+}
+
+#checkboxContainer {
+  margin-top: 3em;
+  display: inline;
+}

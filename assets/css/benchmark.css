@@ -1,0 +1,109 @@
+body {
+    background-image: url(../imgs/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: white;
+    height: 100vh;
+}
+
+header{
+    width: 40%;
+    padding-top: 40px;
+}
+
+#epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
+    width: 150px;
+    margin-left: 4em; 
+}  
+
+h1 {
+    font-family: "Outfit", sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    margin-top: -40px;
+    height: auto;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+span{
+    font-weight: bold;
+}
+
+
+main,footer{
+    text-align: center;
+    width: 75%;
+    margin: auto;
+}
+.button {
+    width: 370px;
+    height: 5em;
+    background-color: rgba(255, 255, 255, 0.076);
+    border-radius: 50px 50px 50px 50px; 
+    box-shadow:  -1px -2px 3px -3px #FFFFFF;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s;   
+    margin: 1em; 
+}
+.btn:hover {
+    background: rgb(144,0,128);
+}
+
+#totalQuestions{
+    color: rgb(144,0,128);
+    color: linear-gradient(207deg, rgba(144,0,128,1) 0%, rgba(210,0,148,1) 100%);
+}
+
+.traccia{
+    stroke: lightgray;
+    fill: none;
+    stroke-width: 20;
+    opacity: 0.3;
+    
+}
+.progresso{
+    fill: none;
+    stroke: aqua;
+    stroke-width: 20;
+    
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+#circleTimer{
+    width: 40%;
+}
+#circleTimer svg{
+margin-left: 40em;
+
+}
+.progresso{
+    width: 50px;
+}
+#contatore{
+    margin-top: 3em;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+#timer{
+    position: relative;
+    margin: 0 auto;
+    left: 150px;
+    bottom: 90px;
+    height: 190px;  
+}
+#timerNumerico {
+    fill: white;
+}
+
+svg {
+    margin-left: 65%;
+    margin-bottom: 2.5em;
+}

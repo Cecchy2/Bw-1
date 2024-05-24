@@ -1,0 +1,89 @@
+body {
+    background-image: url(../imgs/bg.jpg);
+    background-size: cover;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: white;
+    height: 100vh;
+}
+
+h1 {
+    font-family: "Outfit", sans-serif;
+    font-size: 54px;
+    font-weight: 500;
+    text-align: center;
+}
+p {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+#epicodeLogo { /* queste regole sono per il logo, ho messo un id di prova, margini da aggiustare una volta che abbiamo le pagine complete */
+    width: 150px;
+    margin-left: 3em;
+    margin-top: 3em;
+}
+#form{
+    display: block;
+    text-align: center;
+
+}
+
+.star{
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+#comment{
+    text-align: center;
+    
+}
+
+#input{
+    width: 60%;
+    height: 50px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #9a1884;
+    color: antiquewhite;
+    padding-left: 1em;
+    box-sizing: border-box;
+    font-size: 1.1em;
+}
+
+#button{
+    width: 230px;
+    height: 65px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    background-color: rgb(0, 255, 255);
+    border: none;
+    box-shadow: 0px 0px 89px 0px rgb(0, 255, 255);
+    font-size: 1.4em;
+    color: rgb(11, 17, 58);
+}
+#button:hover{
+    cursor: pointer;
+    color: #9a1884;
+    box-shadow: 0px 0px 89px -10px rgb(0, 255, 255);
+    
+}
+a{
+    text-decoration: none;
+}
+
+.votata{
+    color: white;
+}
+
+.feedbackMessage {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 22vh;
+    font-size: 45px;
+}
