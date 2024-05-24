@@ -2,7 +2,7 @@ const voto = localStorage.getItem("voto");
 const votoDato = document.getElementById("votoDato");
 votoDato.innerText = voto;
 
-if (voto <= 7 && voto > 6) {
+if (voto <= 8 && voto > 6) {
   const votoAlto = document.getElementById("votoAlto");
   votoAlto.classList.add("invisibile");
   const divVotoMedio = document.getElementById("votoMedio");
