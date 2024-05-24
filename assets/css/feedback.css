@@ -65,9 +65,10 @@ p {
     font-size: 1.4em;
     color: rgb(11, 17, 58);
 }
-button:hover{
+#button:hover{
     cursor: pointer;
     color: #9a1884;
+    box-shadow: 0px 0px 89px -10px rgb(0, 255, 255);
     
 }
 a{
