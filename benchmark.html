@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/benchmark.css" />
+    <link rel="icon" href="../Bw-1/assets/imgs/quizGameLogo.webp" type="image/svg+xml" />
+    <title>•QuizGame•</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/benchmark.css" />
-  <title>Benchmark</title>
-</head>
-
-<body>
-  <header>
-    <div id="header">
-      <img id="epicodeLogo" src="./assets/imgs/epicode_logo.png" alt="LogoEpicode" />
-    </div>
-  </header>
-  <main>
-    <section id="timer">
-      <svg width="250" height="250">
-        <circle class="traccia" r="60" cx="125" cy="125"></circle>
-        <circle class="progresso" r="60" cx="125" cy="125"></circle>
-        <text id="timerNumerico" x="130" y="137" text-anchor="middle" font-size="40"
-          fill="black"></text>
-      </svg>
-    </section>
-    <h1 id="domanda"></h1>
-    <div id="risposte"></div>
-  </main>
-  <footer>
-    <div id="questionCounter">
-      <h2 id="contatore">
-        QUESTION <span id="currentQuestionNumber"></span>
-        <span id="totalQuestions"></span>
-      </h2>
-    </div>
-  </footer>
-  <script src="./assets/JavaScript/benchmark.js"></script>
-</body>
-
+  <body>
+    <header>
+      <div id="header">
+        <img id="epicodeLogo" src="./assets/imgs/epicode_logo.png" alt="LogoEpicode" />
+      </div>
+    </header>
+    <main>
+      <section id="timer">
+        <svg width="250" height="250">
+          <circle class="traccia" r="60" cx="125" cy="125"></circle>
+          <circle class="progresso" r="60" cx="125" cy="125"></circle>
+          <text id="timerNumerico" x="130" y="137" text-anchor="middle" font-size="40" fill="black"></text>
+        </svg>
+      </section>
+      <h1 id="domanda"></h1>
+      <div id="risposte"></div>
+    </main>
+    <footer>
+      <div id="questionCounter">
+        <h2 id="contatore">
+          QUESTION <span id="currentQuestionNumber"></span>
+          <span id="totalQuestions"></span>
+        </h2>
+      </div>
+    </footer>
+    <script src="./assets/JavaScript/benchmark.js"></script>
+  </body>
 </html>
