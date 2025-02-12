@@ -74,6 +74,7 @@ main,footer{
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
 }
+
 #circleTimer{
     width: 40%;
 }
@@ -139,5 +140,9 @@ svg {
 
   main, footer {
     width: 95%;
+  }
+  
+  .progresso {
+    display: none;
   }
 }
