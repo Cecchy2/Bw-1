@@ -17,6 +17,9 @@ header{
     width: 150px;
     margin-left: 4em; 
 }  
+#epicodeLogo:hover{
+  cursor: pointer;
+}
 
 h1 {
     font-family: "Outfit", sans-serif;
