@@ -87,3 +87,40 @@ a{
     margin-top: 22vh;
     font-size: 45px;
 }
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 1.2em;
+    padding: 0 15px;
+  }
+
+  #epicodeLogo {
+    margin-left: 1em;
+  }
+
+  #input {
+    width: 90%;
+  }
+
+  .star {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .stella {
+    width: 35px;
+    height: 35px;
+  }
+
+  .feedbackMessage {
+    width: 90%;
+    font-size: 30px;
+  }
+}

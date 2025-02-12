@@ -154,3 +154,42 @@ select:hover {
   margin-top: 3em;
   display: inline;
 }
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+  main, form {
+    width: 90%;
+  }
+
+  #titolo {
+    width: 100%;
+    margin-top: 5%;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  main p {
+    width: 100%;
+  }
+
+  #epicodeLogo {
+    margin-left: 1em;
+  }
+
+  label {
+    margin-right: 5%;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #diffic {
+    margin-left: 0;
+  }
+
+  #proceedButton {
+    position: static;
+    margin-top: 20px;
+  }
+}

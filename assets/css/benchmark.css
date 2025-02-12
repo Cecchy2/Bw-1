@@ -107,3 +107,37 @@ svg {
     margin-left: 65%;
     margin-bottom: 2.5em;
 }
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+  header {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+    width: 90%;
+  }
+
+  .button {
+    width: 90%;
+    margin: 0.5em auto;
+  }
+
+  #timer {
+    left: 0;
+    bottom: 0;
+    height: auto;
+  }
+
+  svg {
+    margin-left: 0;
+    width: 80%;
+    height: auto;
+  }
+
+  main, footer {
+    width: 95%;
+  }
+}
